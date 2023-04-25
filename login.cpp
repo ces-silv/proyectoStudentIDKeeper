@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include <conio.h>
+#include <conio.h> //Libreria que me permite el reemplazo de la contrasena por asteriscos
 
 using namespace std;
 
@@ -36,7 +36,7 @@ int main(){
 
         /* Restriccion para que se se pueda o no logear el usuario */
         if (usuarioIngresado == usuarioCorrecto && contrasenaIngresada == contrasenaCorrecta){
-            cout<<"Un saludito "<<usuarioCorrecto<<"!"<<endl;
+            cout<<"Un saludito "<<usuarioCorrecto<<endl;
             break;
         } 
 
