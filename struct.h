@@ -8,3 +8,9 @@ typedef struct
     char faculty[6];
     char email[40];
 }studentsUAM;
+
+typedef struct 
+{
+    bool delivered;
+    bool notDelivered;
+}status;
