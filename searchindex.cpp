@@ -1,3 +1,4 @@
+//Ejemplo de buscador que podemos ocupar
 #include <iostream>
 #include <string>
 using namespace std;
