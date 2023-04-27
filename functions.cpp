@@ -1,7 +1,8 @@
+//Todavia no se para que sirve esta verga pero pues ahi esta
 #include <iostream>
 #include <string.h>
 #include "struct.h"
-#define MAX 40
+#define MAX 10000
 
 using namespace std;
 
