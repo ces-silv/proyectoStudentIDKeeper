@@ -1,7 +1,7 @@
 //Estrucutura de los datos de los estudiantes
 typedef struct{
     int cif;
-    char name[40];
+    char name[1000];
     char faculty[1000];
     char major[1000];
     char email[10000];
