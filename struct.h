@@ -4,7 +4,7 @@ typedef struct{
     char name[1000];
     char faculty[1000];
     char major[1000];
-    char email[10000];
+    char email[1000];
     bool deliveredOrNot;
 }studentsUAM;
 
