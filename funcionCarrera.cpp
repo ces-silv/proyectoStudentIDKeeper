@@ -53,7 +53,7 @@ void buscadorCarrera() {
     system("cls");  /* Borrar en MAC pq esa mierda no sirve ajshgdajshd*/
     cout << "Informacion estudiantil" << endl;
     cout << endl;
-    for(int i = 0; i < 16; i++) {
+    for(int i = 0; i < 19; i++) {
         string major = database[i].major;
         if(major.compare("DIPLOMACIA Y RELACIONES INTERNACIONALES") == 0) { /* Se utiliza para verificar si la cadena de caracteres contenida en la variable "major" es igual a "INGSIS" */
             // compare regresa numeros enteros y solo en caso que sea igual es que regresa el numero 0, es aqui el porque del == 0
@@ -75,7 +75,7 @@ void buscadorCarrera() {
     system("cls");  /* Borrar en MAC pq esa mierda no sirve ajshgdajshd*/
     cout << "Informacion estudiantil" << endl;
     cout << endl;
-    for(int i = 0; i < 16; i++) {
+    for(int i = 0; i < 19; i++) {
         string major = database[i].major;
         if(major.compare("MEDICINA") == 0) { /* Se utiliza para verificar si la cadena de caracteres contenida en la variable "major" es igual a "INGSIS" */
             // compare regresa numeros enteros y solo en caso que sea igual es que regresa el numero 0, es aqui el porque del == 0
@@ -97,7 +97,7 @@ void buscadorCarrera() {
     system("cls");  /* Borrar en MAC pq esa mierda no sirve ajshgdajshd*/
     cout << "Informacion estudiantil" << endl;
     cout << endl;
-    for(int i = 0; i < 16; i++) {
+    for(int i = 0; i < 19; i++) {
         string major = database[i].major;
         if(major.compare("PSICOLOGIA") == 0) { /* Se utiliza para verificar si la cadena de caracteres contenida en la variable "major" es igual a "INGSIS" */
             // compare regresa numeros enteros y solo en caso que sea igual es que regresa el numero 0, es aqui el porque del == 0
@@ -119,7 +119,7 @@ void buscadorCarrera() {
     system("cls");  /* Borrar en MAC pq esa mierda no sirve ajshgdajshd*/
     cout << "Informacion estudiantil" << endl;
     cout << endl;
-    for(int i = 0; i < 16; i++) {
+    for(int i = 0; i < 19; i++) {
         string major = database[i].major;
         if(major.compare("ODONTOLOGIA") == 0) { /* Se utiliza para verificar si la cadena de caracteres contenida en la variable "major" es igual a "INGSIS" */
             // compare regresa numeros enteros y solo en caso que sea igual es que regresa el numero 0, es aqui el porque del == 0
@@ -141,7 +141,7 @@ void buscadorCarrera() {
     system("cls");  /* Borrar en MAC pq esa mierda no sirve ajshgdajshd*/
     cout << "Informacion estudiantil" << endl;
     cout << endl;
-    for(int i = 0; i < 16; i++) {
+    for(int i = 0; i < 19; i++) {
         string major = database[i].major;
         if(major.compare("MARKETING Y PUBLICIDAD") == 0) { /* Se utiliza para verificar si la cadena de caracteres contenida en la variable "major" es igual a "INGSIS" */
             // compare regresa numeros enteros y solo en caso que sea igual es que regresa el numero 0, es aqui el porque del == 0
@@ -163,7 +163,7 @@ void buscadorCarrera() {
     system("cls");  /* Borrar en MAC pq esa mierda no sirve ajshgdajshd*/
     cout << "Informacion estudiantil" << endl;
     cout << endl;
-    for(int i = 0; i < 16; i++) {
+    for(int i = 0; i < 19; i++) {
         string major = database[i].major;
         if(major.compare("DISENO Y COMUNICACION VISUAL") == 0) { /* Se utiliza para verificar si la cadena de caracteres contenida en la variable "major" es igual a "INGSIS" */
             // compare regresa numeros enteros y solo en caso que sea igual es que regresa el numero 0, es aqui el porque del == 0
@@ -185,7 +185,7 @@ void buscadorCarrera() {
     system("cls");  /* Borrar en MAC pq esa mierda no sirve ajshgdajshd*/
     cout << "Informacion estudiantil" << endl;
     cout << endl;
-    for(int i = 0; i < 16; i++) {
+    for(int i = 0; i < 19; i++) {
         string major = database[i].major;
         if(major.compare("COMUNICACION Y RELACIONES PUBLICAS") == 0) { /* Se utiliza para verificar si la cadena de caracteres contenida en la variable "major" es igual a "INGSIS" */
             // compare regresa numeros enteros y solo en caso que sea igual es que regresa el numero 0, es aqui el porque del == 0
@@ -207,7 +207,7 @@ void buscadorCarrera() {
     system("cls");  /* Borrar en MAC pq esa mierda no sirve ajshgdajshd*/
     cout << "Informacion estudiantil" << endl;
     cout << endl; // Puse 100 por poner un valor, agregue a unos amigos de admin y queria probar, necesita cambio
-    for(int i = 0; i < 100; i++) {
+    for(int i = 0; i < 19; i++) {
         string major = database[i].major;
         if(major.compare("ADMINISTRACION DE EMPRESAS") == 0) { /* Se utiliza para verificar si la cadena de caracteres contenida en la variable "major" es igual a "INGSIS" */
             // compare regresa numeros enteros y solo en caso que sea igual es que regresa el numero 0, es aqui el porque del == 0
@@ -229,7 +229,7 @@ void buscadorCarrera() {
     system("cls");  /* Borrar en MAC pq esa mierda no sirve ajshgdajshd*/
     cout << "Informacion estudiantil" << endl;
     cout << endl;
-    for(int i = 0; i < 16; i++) {
+    for(int i = 0; i < 19; i++) {
         string major = database[i].major;
         if(major.compare("NEGOCIOS INTERNACIONALES") == 0) { /* Se utiliza para verificar si la cadena de caracteres contenida en la variable "major" es igual a "INGSIS" */
             // compare regresa numeros enteros y solo en caso que sea igual es que regresa el numero 0, es aqui el porque del == 0
@@ -251,7 +251,7 @@ void buscadorCarrera() {
     system("cls");  /* Borrar en MAC pq esa mierda no sirve ajshgdajshd*/
     cout << "Informacion estudiantil" << endl;
     cout << endl;
-    for(int i = 0; i < 16; i++) {
+    for(int i = 0; i < 19; i++) {
         string major = database[i].major;
         if(major.compare("ECONOMIA EMPRESARIAL") == 0) { /* Se utiliza para verificar si la cadena de caracteres contenida en la variable "major" es igual a "INGSIS" */
             // compare regresa numeros enteros y solo en caso que sea igual es que regresa el numero 0, es aqui el porque del == 0
@@ -273,7 +273,7 @@ void buscadorCarrera() {
     system("cls");  /* Borrar en MAC pq esa mierda no sirve ajshgdajshd*/
     cout << "Informacion estudiantil" << endl;
     cout << endl;
-    for(int i = 0; i < 16; i++) {
+    for(int i = 0; i < 19; i++) {
         string major = database[i].major;
         if(major.compare("CONTABILIDAD Y FINANZAS") == 0) { /* Se utiliza para verificar si la cadena de caracteres contenida en la variable "major" es igual a "INGSIS" */
             // compare regresa numeros enteros y solo en caso que sea igual es que regresa el numero 0, es aqui el porque del == 0
@@ -295,7 +295,7 @@ void buscadorCarrera() {
     system("cls");  /* Borrar en MAC pq esa mierda no sirve ajshgdajshd*/
     cout << "Informacion estudiantil" << endl;
     cout << endl;
-    for(int i = 0; i < 16; i++) {
+    for(int i = 0; i < 19; i++) {
         string major = database[i].major;
         if(major.compare("INGENIERIA INDUSTRIAL") == 0) { /* Se utiliza para verificar si la cadena de caracteres contenida en la variable "major" es igual a "INGSIS" */
             // compare regresa numeros enteros y solo en caso que sea igual es que regresa el numero 0, es aqui el porque del == 0
@@ -317,7 +317,7 @@ void buscadorCarrera() {
     system("cls");  /* Borrar en MAC pq esa mierda no sirve ajshgdajshd*/
     cout << "Informacion estudiantil" << endl;
     cout << endl;
-    for(int i = 0; i < 16; i++) {
+    for(int i = 0; i < 19; i++) {
         string major = database[i].major;
         if(major.compare("INGENIERIA CIVIL") == 0) { /* Se utiliza para verificar si la cadena de caracteres contenida en la variable "major" es igual a "INGSIS" */
             // compare regresa numeros enteros y solo en caso que sea igual es que regresa el numero 0, es aqui el porque del == 0
@@ -339,7 +339,7 @@ void buscadorCarrera() {
     system("cls");  /* Borrar en MAC pq esa mierda no sirve ajshgdajshd*/
     cout << "Informacion estudiantil" << endl;
     cout << endl;
-    for(int i = 0; i < 16; i++) {
+    for(int i = 0; i < 19; i++) {
         string major = database[i].major;
         if(major.compare("INGENIERIA EN SISTEMAS DE INFORMACION") == 0) { /* Se utiliza para verificar si la cadena de caracteres contenida en la variable "major" es igual a "INGSIS" */
             // compare regresa numeros enteros y solo en caso que sea igual es que regresa el numero 0, es aqui el porque del == 0
@@ -361,7 +361,7 @@ void buscadorCarrera() {
     system("cls");  /* Borrar en MAC pq esa mierda no sirve ajshgdajshd*/
     cout << "Informacion estudiantil" << endl;
     cout << endl;
-    for(int i = 0; i < 16; i++) {
+    for(int i = 0; i < 19; i++) {
         string major = database[i].major;
         if(major.compare("ARQUITECTURA") == 0) { /* Se utiliza para verificar si la cadena de caracteres contenida en la variable "major" es igual a "INGSIS" */
             // compare regresa numeros enteros y solo en caso que sea igual es que regresa el numero 0, es aqui el porque del == 0

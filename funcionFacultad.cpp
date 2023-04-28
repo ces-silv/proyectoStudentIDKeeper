@@ -22,7 +22,7 @@ void buscadorFacultad(){
     system("cls");
     cout << "Informacion estudiantil" << endl;
     cout << endl;
-    for(int i = 0; i < 16; i++) {
+    for(int i = 0; i < 19; i++) {
         string faculty = database[i].faculty;
         if(faculty.compare("FACULTAD DE ODONTOLOGIA") == 0) { /* Se utiliza para verificar si la cadena de caracteres contenida en la variable "faculty" es igual a "INGSIS" */
             // compare regresa numeros enteros y solo en caso que sea igual es que regresa el numero 0, es aqui el porque del == 0
@@ -44,7 +44,7 @@ void buscadorFacultad(){
     system("cls");
     cout << "Informacion estudiantil" << endl;
     cout << endl;
-    for(int i = 0; i < 16; i++) {
+    for(int i = 0; i < 19; i++) {
         string faculty = database[i].faculty;
         if(faculty.compare("FACULTAD DE CIENCIAS MEDICAS") == 0) {
             cout << "CIF: " << database[i].cif << endl;
@@ -65,7 +65,7 @@ void buscadorFacultad(){
         system("cls");
         cout << "Informacion estudiantil" << endl;
         cout << endl;
-        for(int i = 0; i < 16; i++) {
+        for(int i = 0; i < 19; i++) {
             string faculty = database[i].faculty;
             if(faculty.compare("FACULTAD DE MARKETING, DISEÑO Y CIENCIAS DE LA COMUNICACION") == 0) {
             cout << "CIF: " << database[i].cif << endl;
@@ -86,7 +86,7 @@ void buscadorFacultad(){
         system("cls");
         cout << "Informacion estudiantil" << endl;
         cout << endl;
-        for(int i = 0; i < 16; i++) {
+        for(int i = 0; i < 19; i++) {
             string faculty = database[i].faculty;
             if(faculty.compare("FACULTAD DE CIENCIAS ADMINISTRATIVAS Y ECONOMICAS") == 0) {
             cout << "CIF: " << database[i].cif << endl;
@@ -107,7 +107,7 @@ void buscadorFacultad(){
         system("cls");
         cout << "Informacion estudiantil" << endl;
         cout << endl;
-        for(int i = 0; i < 16; i++) {
+        for(int i = 0; i < 19; i++) {
             string faculty = database[i].faculty;
             if(faculty.compare("FACULTAD DE INGENIERIA Y ARQUITECTURA") == 0) {
             cout << "CIF: " << database[i].cif << endl;
@@ -128,7 +128,7 @@ void buscadorFacultad(){
         system("cls");
         cout << "Informacion estudiantil" << endl;
         cout << endl;
-        for(int i = 0; i < 16; i++) {
+        for(int i = 0; i < 19; i++) {
             string faculty = database[i].faculty;
             if(faculty.compare("FACULTAD DE CIENCIAS JURIDICAS Y RELACIONES INTERNACIONALES") == 0) {
             cout << "CIF: " << database[i].cif << endl;

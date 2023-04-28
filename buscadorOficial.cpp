@@ -30,7 +30,7 @@ int main(){
 
         case 3: buscadorFacultad();
             break;
-            
+
         case 4: buscadorCarrera();
             break;
                 
@@ -55,7 +55,7 @@ void buscadorCIF(){
             
             bool found = false;
             int index; 
-            for (int i = 0; i < 16; i++){
+            for (int i = 0; i < 19; i++){
                 if (database[i].cif == searchCIF){
                     found = true;
                     index = i;
@@ -86,7 +86,7 @@ void buscadorCIF(){
 void buscadorEntregado(){
     cout << "Informacion estudiantil" << endl;
     cout << endl;
-    for(int i = 0; i < 16; i++){
+    for(int i = 0; i < 19; i++){
         if(database[i].deliveredOrNot == true){
             cout << "CIF: " << database[i].cif << endl;
             cout << "Nombre: " <<database[i].name << endl;
@@ -102,7 +102,7 @@ void buscadorEntregado(){
 void buscadorNoEntregado(){
     cout << "Informacion estudiantil" << endl;
     cout << endl;
-    for(int i = 0; i < 16; i++){
+    for(int i = 0; i < 19; i++){
         if(database[i].deliveredOrNot == false){
             cout << "CIF: " << database[i].cif << endl;
             cout << "Nombre: " <<database[i].name << endl;
