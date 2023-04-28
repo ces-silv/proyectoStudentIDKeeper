@@ -4,6 +4,8 @@
 using namespace std;
 
 void buscadorCIF();
+void buscadorEntregado();
+void buscadorNoEntregado();
 
 int main(){
     int filtro;
@@ -22,6 +24,12 @@ int main(){
     switch(filtro)
     {
         case 1: buscadorCIF();
+            break;
+        
+        case 5: buscadorEntregado();
+            break;
+        
+        case 6: buscadorNoEntregado();
             break;
 
         default: cout << "SALIO CON EXITO DE LOS FILTROS.";
@@ -65,4 +73,36 @@ void buscadorCIF(){
             }else {
                 cout << searchCIF << " no fue encontrado en la base de datos. " << endl;
             }
+}
+
+void buscadorEntregado(){
+    cout << "Informacion estudiantil" << endl;
+    cout << endl;
+    for(int i = 0; i < 16; i++){
+        if(database[i].deliveredOrNot == true){
+            cout << "CIF: " << database[i].cif << endl;
+            cout << "Nombre: " <<database[i].name << endl;
+            cout << "Facultad: " <<database[i].faculty << endl;
+            cout << "Carrera: " <<database[i].major << endl;
+            cout << "email: " <<database[i].email << endl;
+            cout << "Status: Entregado" << endl;
+            cout << endl;
+        }
+    }
+}
+
+void buscadorNoEntregado(){
+    cout << "Informacion estudiantil" << endl;
+    cout << endl;
+    for(int i = 0; i < 16; i++){
+        if(database[i].deliveredOrNot == false){
+            cout << "CIF: " << database[i].cif << endl;
+            cout << "Nombre: " <<database[i].name << endl;
+            cout << "Facultad: " <<database[i].faculty << endl;
+            cout << "Carrera: " <<database[i].major << endl;
+            cout << "email: " <<database[i].email << endl;
+            cout << "Status: No Entregado" << endl;
+            cout << endl;
+        }
+    }
 }
