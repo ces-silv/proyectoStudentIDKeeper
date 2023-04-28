@@ -27,7 +27,10 @@ int main(){
     {
         case 1: buscadorCIF();
             break;
-        
+
+        case 3: buscadorFacultad();
+            break;
+            
         case 4: buscadorCarrera();
             break;
                 
