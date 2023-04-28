@@ -6,7 +6,6 @@
 using namespace std;
 
 void buscadorCIF();
-//nombre
 void buscadorEntregado();
 void buscadorNoEntregado();
 
@@ -81,9 +80,6 @@ void buscadorCIF(){
             }
 }
 
-
-
-/* FUNCIONES ENTREGADO Y NO ENTREGADO */
 void buscadorEntregado(){
     cout << "Informacion estudiantil" << endl;
     cout << endl;
