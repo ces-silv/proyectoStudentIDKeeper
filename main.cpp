@@ -15,7 +15,10 @@ int main()
         cout << "Facultad: " <<database[i].faculty << endl;
         cout << "Carrera: " <<database[i].major << endl;
         cout << "email: " <<database[i].email << endl;
-        cout << "Status: " <<database[i].deliveredOrNot << endl << endl;
+        if (database[i].deliveredOrNot == false){ 
+            cout << "Status: " << "No Entregado" << endl << endl;}
+        else{
+            cout << "Status: " << "Entregado" << endl;}
 
     }
     return 0;
