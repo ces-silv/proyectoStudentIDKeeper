@@ -18,7 +18,7 @@ int main()
         if (database[i].deliveredOrNot == false){ 
             cout << "Status: " << "No Entregado" << endl << endl;}
         else{
-            cout << "Status: " << "Entregado" << endl;}
+            cout << "Status: " << "Entregado" << endl << endl;}
 
     }
     return 0;
