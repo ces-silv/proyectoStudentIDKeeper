@@ -3,11 +3,13 @@
 #include "struct.h"
 #include "funcionCarrera.cpp"
 #include "funcionFacultad.cpp"
+#include "funcionnombre2.cpp"
 using namespace std;
 
 void buscadorCIF();
 void buscadorEntregado();
 void buscadorNoEntregado();
+
 
 int main(){
     int filtro;
@@ -26,6 +28,9 @@ int main(){
     switch(filtro)
     {
         case 1: buscadorCIF();
+            break;
+
+        case 2: buscadorNombre();
             break;
 
         case 3: buscadorFacultad();
