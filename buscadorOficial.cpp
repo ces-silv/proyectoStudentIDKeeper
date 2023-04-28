@@ -1,9 +1,12 @@
 #include <iostream>
 #include <string>
 #include "struct.h"
+#include "funcionCarrera.cpp"
+#include "funcionFacultad.cpp"
 using namespace std;
 
 void buscadorCIF();
+//nombre
 void buscadorEntregado();
 void buscadorNoEntregado();
 
@@ -26,6 +29,9 @@ int main(){
         case 1: buscadorCIF();
             break;
         
+        case 4: buscadorCarrera();
+            break;
+                
         case 5: buscadorEntregado();
             break;
         
@@ -75,6 +81,9 @@ void buscadorCIF(){
             }
 }
 
+
+
+/* FUNCIONES ENTREGADO Y NO ENTREGADO */
 void buscadorEntregado(){
     cout << "Informacion estudiantil" << endl;
     cout << endl;
