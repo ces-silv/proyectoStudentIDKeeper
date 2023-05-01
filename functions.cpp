@@ -53,7 +53,7 @@ void nameSearcher() {
     cout << "Ingrese el nombre a buscar" << endl;
     getline(cin, buscaNombre); // Se utiliza getline() para leer toda la línea
 
-    system("clear");
+    system("cls || clear");
     cout << "Informacion estudiantil" << endl;
     cout << endl;
     for(int i = 0; i < 100; i++) {
@@ -89,7 +89,7 @@ void facultySearcher(){
     switch (opcBuscadorFacultad)
     {
     case 1: // FACULTAD DE ODONTOLOGIA
-    system("cls");
+    system("cls || clear");
     cout << "Informacion estudiantil" << endl;
     cout << endl;
     for(int i = 0; i < 19; i++) {
@@ -111,7 +111,7 @@ void facultySearcher(){
         break;
 
     case 2: // FACULTAD DE CIENCIAS MEDICAS
-    system("cls");
+    system("cls || clear");
     cout << "Informacion estudiantil" << endl;
     cout << endl;
     for(int i = 0; i < 19; i++) {
@@ -132,7 +132,7 @@ void facultySearcher(){
         break; 
 
     case 3: // FACULTAD DE MARKETING, DISEÑO Y CIENCIAS DE LA COMUNICACION
-        system("cls");
+        system("cls || clear");
         cout << "Informacion estudiantil" << endl;
         cout << endl;
         for(int i = 0; i < 19; i++) {
@@ -153,7 +153,7 @@ void facultySearcher(){
         break;
 
     case 4: // FACULTAD DE CIENCIAS ADMINISTRATIVAS Y ECONOMICAS
-        system("cls");
+        system("cls || clear");
         cout << "Informacion estudiantil" << endl;
         cout << endl;
         for(int i = 0; i < 19; i++) {
@@ -174,7 +174,7 @@ void facultySearcher(){
         break;
 
     case 5: //FACULTAD DE INGENIERIA Y ARQUITECTURA
-        system("cls");
+        system("cls || clear");
         cout << "Informacion estudiantil" << endl;
         cout << endl;
         for(int i = 0; i < 19; i++) {
@@ -195,7 +195,7 @@ void facultySearcher(){
         break;
 
     case 6: //FACULTAD DE CIENCIAS JURIDICAS, HUMANIDADES Y RELACIONES INTERNACIONALES
-        system("cls");
+        system("cls || clear");
         cout << "Informacion estudiantil" << endl;
         cout << endl;
         for(int i = 0; i < 19; i++) {
@@ -216,7 +216,7 @@ void facultySearcher(){
         break;
 
     default:
-        system("cls");
+        system("cls || clear");
         cout << "OPCION NO PERMITIDA - VOLVIENDO AL MENU DE SELECION" << endl;
         facultySearcher();
         break;
@@ -247,7 +247,7 @@ void majorSearcher() {
 
     switch (opcBuscadorCarrera){
     case 1: // DERECHO
-    system("cls");  /* Borrar en MAC pq esa mierda no sirve ajshgdajshd*/
+    system("cls || clear"); 
     cout << "Informacion estudiantil" << endl;
     cout << endl;
     for(int i = 0; i < 16; i++) {
@@ -269,7 +269,7 @@ void majorSearcher() {
     break;
 
     case 2: // DIPLOMACIA Y RELACIONES INTERNACIONALES
-    system("cls");  /* Borrar en MAC pq esa mierda no sirve ajshgdajshd*/
+    system("cls || clear");
     cout << "Informacion estudiantil" << endl;
     cout << endl;
     for(int i = 0; i < 19; i++) {
@@ -291,7 +291,7 @@ void majorSearcher() {
     break;
 
     case 3: // MEDICINA
-    system("cls");  /* Borrar en MAC pq esa mierda no sirve ajshgdajshd*/
+    system("cls || clear");
     cout << "Informacion estudiantil" << endl;
     cout << endl;
     for(int i = 0; i < 19; i++) {
@@ -313,7 +313,7 @@ void majorSearcher() {
     break;
 
     case 4: // PSICOLOGIA
-    system("cls");  /* Borrar en MAC pq esa mierda no sirve ajshgdajshd*/
+    system("cls || clear");
     cout << "Informacion estudiantil" << endl;
     cout << endl;
     for(int i = 0; i < 19; i++) {
@@ -335,7 +335,7 @@ void majorSearcher() {
     break;
 
     case 5: // ODONTOLOGIA
-    system("cls");  /* Borrar en MAC pq esa mierda no sirve ajshgdajshd*/
+    system("cls || clear");
     cout << "Informacion estudiantil" << endl;
     cout << endl;
     for(int i = 0; i < 19; i++) {
@@ -357,7 +357,7 @@ void majorSearcher() {
     break;
 
     case 6: // MARKETING Y PUBLICIDAD
-    system("cls");  /* Borrar en MAC pq esa mierda no sirve ajshgdajshd*/
+    system("cls || clear");
     cout << "Informacion estudiantil" << endl;
     cout << endl;
     for(int i = 0; i < 19; i++) {
@@ -379,7 +379,7 @@ void majorSearcher() {
     break;
 
     case 7: // DISENO Y COMUNICACION VISUAL
-    system("cls");  /* Borrar en MAC pq esa mierda no sirve ajshgdajshd*/
+    system("cls || clear");
     cout << "Informacion estudiantil" << endl;
     cout << endl;
     for(int i = 0; i < 19; i++) {
@@ -401,7 +401,7 @@ void majorSearcher() {
     break;
 
     case 8: // COMUNICACION Y RELACIONES PUBLICAS - FALTAN ESTUDIANTES
-    system("cls");  /* Borrar en MAC pq esa mierda no sirve ajshgdajshd*/
+    system("cls || clear");
     cout << "Informacion estudiantil" << endl;
     cout << endl;
     for(int i = 0; i < 19; i++) {
@@ -423,7 +423,7 @@ void majorSearcher() {
     break;
 
     case 9: // ADMINISTRACION DE EMPRESAS
-    system("cls");  /* Borrar en MAC pq esa mierda no sirve ajshgdajshd*/
+    system("cls || clear");
     cout << "Informacion estudiantil" << endl;
     cout << endl; // Puse 100 por poner un valor, agregue a unos amigos de admin y queria probar, necesita cambio
     for(int i = 0; i < 19; i++) {
@@ -445,7 +445,7 @@ void majorSearcher() {
     break;
 
     case 10: // NEGOCIOS INTERNACIONALES
-    system("cls");  /* Borrar en MAC pq esa mierda no sirve ajshgdajshd*/
+    system("cls || clear");
     cout << "Informacion estudiantil" << endl;
     cout << endl;
     for(int i = 0; i < 19; i++) {
@@ -467,7 +467,7 @@ void majorSearcher() {
     break;
 
     case 11: // ECONOMIA EMPRESARIAL
-    system("cls");  /* Borrar en MAC pq esa mierda no sirve ajshgdajshd*/
+    system("cls || clear");
     cout << "Informacion estudiantil" << endl;
     cout << endl;
     for(int i = 0; i < 19; i++) {
@@ -489,7 +489,7 @@ void majorSearcher() {
     break;
 
     case 12: // CONTABILIDAD Y FINANZAS
-    system("cls");  /* Borrar en MAC pq esa mierda no sirve ajshgdajshd*/
+    system("cls || clear");
     cout << "Informacion estudiantil" << endl;
     cout << endl;
     for(int i = 0; i < 19; i++) {
@@ -511,7 +511,7 @@ void majorSearcher() {
     break;
 
     case 13: // INGENIERIA INDUSTRIAL
-    system("cls");  /* Borrar en MAC pq esa mierda no sirve ajshgdajshd*/
+    system("cls || clear");
     cout << "Informacion estudiantil" << endl;
     cout << endl;
     for(int i = 0; i < 19; i++) {
@@ -533,7 +533,7 @@ void majorSearcher() {
     break;
 
     case 14: // INGENIERIA CIVIL
-    system("cls");  /* Borrar en MAC pq esa mierda no sirve ajshgdajshd*/
+    system("cls || clear");
     cout << "Informacion estudiantil" << endl;
     cout << endl;
     for(int i = 0; i < 19; i++) {
@@ -555,7 +555,7 @@ void majorSearcher() {
     break;
 
     case 15: // INGENIERIA EN SISTEMAS DE INFORMACION
-    system("cls");  /* Borrar en MAC pq esa mierda no sirve ajshgdajshd*/
+    system("cls || clear");
     cout << "Informacion estudiantil" << endl;
     cout << endl;
     for(int i = 0; i < 19; i++) {
@@ -577,7 +577,7 @@ void majorSearcher() {
         break;
     
     case 16: // ARQUITECTURA
-    system("cls");  /* Borrar en MAC pq esa mierda no sirve ajshgdajshd*/
+    system("cls || clear");
     cout << "Informacion estudiantil" << endl;
     cout << endl;
     for(int i = 0; i < 19; i++) {
@@ -599,7 +599,7 @@ void majorSearcher() {
         break;
 
     default:
-        system("cls"); /* MAC */
+        system("cls || clear");
         cout << "OPCION NO PERMITIDA - VOLVIENDO AL MENU DE SELECION" << endl;
         majorSearcher();
         break;

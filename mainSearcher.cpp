@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string.h>
 #include "functions.cpp"
+#include <struct.h>
 
 using namespace std;
 
@@ -24,7 +25,7 @@ int main(){
     cout << endl;
     cout << "---> ";
     cin >> filtro;
-    cin.ignore(); /* Literalmente la linea mas imporante del pograma, sin ella no funciona el buscador de nombres
+    cin.ignore(); /* Literalmente la linea mas imporante del programa, sin ella no funciona el buscador de nombres
     el cin.ignore(); sirve para descartar los caracteres en la memoria temporal en la que se almacenan los 
     caracteres que se ingresan mediante el teclado, en este caso el cin >> filtro .*/
     
