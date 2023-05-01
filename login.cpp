@@ -2,6 +2,7 @@
 #include <string>
 #include <limits>
 #include <cstdlib>
+#include "mainSearcher.cpp"
 
 #ifdef _WIN32
 #include <conio.h> // Solo para Windows
@@ -62,6 +63,7 @@ int main(){
         /* Restriccion para que se se pueda o no logear el usuario */
         if (usuarioIngresado == usuarioCorrecto && contrasenaIngresada == contrasenaCorrecta){
             cout<<"Un saludito "<<usuarioCorrecto<<endl;
+            menufrfr();
             break;
         } 
 
