@@ -1,12 +1,12 @@
 //Estrucutura de los datos de los estudiantes
-struct studentsUAM{
+typedef struct{
     int cif;
     char name[1000];
     char faculty[1000];
     char major[1000];
     char email[1000];
     bool deliveredOrNot;
-};
+}studentsUAM;
 
 //Declaracion e inicializacion
 studentsUAM database[] = {

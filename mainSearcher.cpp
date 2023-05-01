@@ -12,7 +12,7 @@ void deliveredSearcher();
 void notDeliveredSearcher();
 
 int main(){
-    int filtro;
+    int selectMenu;
     cout << endl;
     cout << "SELECCIONE UN FILTRO DE BUSQUEDA: " << endl;
     cout << "1. CIF" << endl;
@@ -23,12 +23,12 @@ int main(){
     cout << "6. NO ENTREGADO" << endl;
     cout << endl;
     cout << "---> ";
-    cin >> filtro;
+    cin >> selectMenu;
     cin.ignore(); /* Literalmente la linea mas imporante del programa, sin ella no funciona el buscador de nombres
     el cin.ignore(); sirve para descartar los caracteres en la memoria temporal en la que se almacenan los 
     caracteres que se ingresan mediante el teclado, en este caso el cin >> filtro .*/
     
-    switch(filtro){
+    switch(selectMenu){
         case 1: cifSearcher();
             break;
 

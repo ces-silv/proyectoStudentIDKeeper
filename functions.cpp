@@ -49,16 +49,16 @@ void cifSearcher(){
 }
 
 void nameSearcher() {
-    string buscaNombre;
+    string searchName;
     cout << "Ingrese el nombre a buscar" << endl;
-    getline(cin, buscaNombre); // Se utiliza getline() para leer toda la línea
+    getline(cin, searchName); // Se utiliza getline() para leer toda la línea
 
     system("cls || clear");
     cout << "Informacion estudiantil" << endl;
     cout << endl;
     for(int i = 0; i < 100; i++) {
         string name = database[i].name;
-        if(name.compare(buscaNombre) == 0) { /* Se utiliza para verificar si la cadena de caracteres contenida en la variable "faculty" es igual a "INGSIS" */
+        if(name.compare(searchName) == 0) { /* Se utiliza para verificar si la cadena de caracteres contenida en la variable "faculty" es igual a "INGSIS" */
             // compare regresa numeros enteros y solo en caso que sea igual es que regresa el numero 0, es aqui el porque del == 0
             cout << "CIF: " << database[i].cif << endl;
             cout << "Nombre: " << database[i].name << endl;
@@ -75,7 +75,7 @@ void nameSearcher() {
 }
 
 void facultySearcher(){
-    int opcBuscadorFacultad;
+    int searchFaculty;
     cout << "Selecciona la facultad a buscar" << endl;
     cout << "1. Facultad de Odontologia" << endl;
     cout << "2. Facultad de Ciencias Medicas" << endl;
@@ -84,9 +84,9 @@ void facultySearcher(){
     cout << "5. Facultad de Ingenieria y Arquitectura" << endl;
     cout << "6. Facultad de Ciencias Juridicas, Humanidades y Relaciones Internacionales" << endl;
     cout << endl;
-    cout << "---> "; cin >> opcBuscadorFacultad;
+    cout << "---> "; cin >> searchFaculty;
 
-    switch (opcBuscadorFacultad)
+    switch (searchFaculty)
     {
     case 1: // FACULTAD DE ODONTOLOGIA
     system("cls || clear");
@@ -153,7 +153,7 @@ void facultySearcher(){
         break;
 
     case 4: // FACULTAD DE CIENCIAS ADMINISTRATIVAS Y ECONOMICAS
-        system("cls || clear");
+        system("clear || cls");
         cout << "Informacion estudiantil" << endl;
         cout << endl;
         for(int i = 0; i < 19; i++) {
@@ -224,7 +224,7 @@ void facultySearcher(){
 }
 
 void majorSearcher() {
-    int opcBuscadorCarrera;
+    int searchMajor;
     cout << "Seleccione la carrera a buscar" << endl;
     cout<< "1. Derecho" <<endl;
     cout<< "2. Diplomacia y Relaciones Internacionales" <<endl;
@@ -243,9 +243,9 @@ void majorSearcher() {
     cout<< "15. Ingenieria en Sistemas de Informacion" <<endl;
     cout<< "16. Arquitectura" <<endl;
     cout << endl;
-    cout << "---> "; cin>>opcBuscadorCarrera;
+    cout << "---> "; cin >> searchMajor;
 
-    switch (opcBuscadorCarrera){
+    switch (searchMajor){
     case 1: // DERECHO
     system("cls || clear"); 
     cout << "Informacion estudiantil" << endl;
