@@ -3,9 +3,9 @@
 #include "struct.h"
 using namespace std;
 
-void buscadorNombre();
+void nameSearcher();
 
-void buscadorNombre() {
+void nameSearcher() {
     string buscaNombre;
     cout << "Ingrese el nombre a buscar" << endl;
     getline(cin, buscaNombre); // Se utiliza getline() para leer toda la línea
@@ -29,11 +29,4 @@ void buscadorNombre() {
             cout << endl;
         }
     }
-}
-
-int main(){
-    
-    buscadorNombre();
-
-    return 0;
 }

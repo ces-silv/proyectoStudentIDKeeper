@@ -1,4 +1,4 @@
-// Main code
+// Muestra todos los datos guardados en la estructura
 #include <iostream>
 #include <string.h>
 #include "struct.h"
