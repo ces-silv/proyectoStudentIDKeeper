@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string.h>
 #include "functions.cpp"
-#include <struct.h>
 
 using namespace std;
 
