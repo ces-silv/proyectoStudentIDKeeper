@@ -11,7 +11,7 @@ void majorSearcher();
 void deliveredSearcher();
 void notDeliveredSearcher();
 
-void menufrfr(){
+void menuMain(){
     int selectMenu;
     cout << endl;
     cout << "SELECCIONE UN FILTRO DE BUSQUEDA: " << endl;

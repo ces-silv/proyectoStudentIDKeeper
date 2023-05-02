@@ -12,30 +12,30 @@ using namespace std;
 
 int main(){
     /* Declaracion de variables para el logeo */
-    string usuarioCorrecto = "admin";
-    string contrasenaCorrecta = "1234";
-    string usuarioIngresado, contrasenaIngresada;
+    string correctUser = "admin";
+    string correctPass = "1234";
+    string typUser, typPass;
     char c;
-    int intentos = 0, restantes = 3;
+    int trial = 0, left = 3;
 
-    while (intentos < 3){ /* El while permite que haya un maximo de 3 intentos fallidos */
+    while (trial < 3){ /* El while permite que haya un maximo de 3 intentos fallidos */
         cout<<"Ingrese su nombre de usuario: ";
-        cin>>usuarioIngresado;
+        cin>>typUser;
         cout<<"Ingrese su contrasena: ";
-        contrasenaIngresada = "";
+        typPass = "";
 #ifdef _WIN32
         while (true) {
             c = getch();
             if (c == 13){break;} // Si se presiona Enter, terminar el bucle
             if (c == 8) { // Si se presiona Borrar, borrar el último caracter de la contraseña
-                if (contrasenaIngresada.length() > 0) {
-                    contrasenaIngresada.erase(contrasenaIngresada.length() - 1);
+                if (typPass.length() > 0) {
+                    typPass.erase(typPass.length() - 1);
                     cout << "\b \b"; // Borrar el ultimo asterisco ingresado, \b es igual a decir 8 en sistema ASCII
                 }
             }
 
             else{
-                contrasenaIngresada += c;
+                typPass += c;
                 cout << "*"; // Reemplaza los caracteres que ingrese el usuario por asteriscos
             }
         }
@@ -45,12 +45,12 @@ int main(){
         c = cin.get();
         while (c != '\n') {
             if (c == 127 || c == 8) { // Si se presiona Borrar o Retroceso, borrar el último caracter de la contraseña
-                if (contrasenaIngresada.length() > 0) {
-                    contrasenaIngresada.erase(contrasenaIngresada.length() - 1);
+                if (typPass.length() > 0) {
+                    typPass.erase(typPass.length() - 1);
                     cout << "\b \b"; // Borrar el ultimo asterisco ingresado
                 }
             } else {
-                contrasenaIngresada += c;
+                typPass += c;
                 cout << "*"; // Reemplaza los caracteres que ingrese el usuario por asteriscos
             }
             c = cin.get();
@@ -61,20 +61,20 @@ int main(){
         cout << endl;
 
         /* Restriccion para que se se pueda o no logear el usuario */
-        if (usuarioIngresado == usuarioCorrecto && contrasenaIngresada == contrasenaCorrecta){
-            cout<<"Un saludito "<<usuarioCorrecto<<endl;
-            menufrfr();
+        if (typUser == correctUser && typPass == correctPass){
+            cout<<"Un saludito "<<correctUser<<endl;
+            menuMain();
             break;
         } 
 
         else{
             system("clear || cls");
-            intentos++, restantes--;
-            cout<<"Usuario o contrasena incorrectos - Tiene "<<restantes<<" intentos disponibles."<<endl;
+            trial++, left--;
+            cout<<"Usuario o contrasena incorrectos - Tiene "<<left<<" intentos disponibles."<<endl;
         }
     }
 
-    if (intentos == 3 && restantes == 0){ /* Restriccion si se llega al limite de intentos */
+    if (trial == 3 && left == 0){ /* Restriccion si se llega al limite de intentos */
         system("clear || cls");
         cout << "Ha excedido el maximos de intentos permitidos." << endl;
     }
