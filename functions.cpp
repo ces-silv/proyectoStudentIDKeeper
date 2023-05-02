@@ -4,6 +4,8 @@
 
 using namespace std;
 
+FILE * archivo; // Crear Archivo Para Estructuras
+
 //Prototipo de funciones
 void cifSearcher();
 void nameSearcher();
@@ -11,6 +13,20 @@ void facultySearcher();
 void majorSearcher();
 void deliveredSearcher();
 void notDeliveredSearcher();
+void createFile();
+
+void createFile(int ultReg){
+    archivo = fopen("registro.dat", "w");
+    for (int i = 0; i < ultReg; i++){
+        fprintf(archivo, "%i\n", database[i].cif);
+        fprintf(archivo, "%s\n", database[i].name);
+        fprintf(archivo, "%s\n", database[i].faculty);
+        fprintf(archivo, "%s\n", database[i].major);
+        fprintf(archivo, "%s\n", database[i].email);
+        fprintf(archivo, "%i\n", database[i].deliveredOrNot);
+    }
+    
+}
 
 void cifSearcher(){
     int searchCIF;
