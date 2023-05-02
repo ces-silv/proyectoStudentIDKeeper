@@ -1,12 +1,14 @@
 //Estrucutura de los datos de los estudiantes
 typedef struct{
     int cif;
-    char name[1000];
-    char faculty[1000];
-    char major[1000];
-    char email[1000];
+    char name[100];
+    char faculty[100];
+    char major[100];
+    char email[100];
     bool deliveredOrNot;
 }studentsUAM;
+
+
 
 //Declaracion e inicializacion
 studentsUAM database[] = {
@@ -14,7 +16,7 @@ studentsUAM database[] = {
     "INGENIERIA EN SISTEMAS DE INFORMACION", "samora@uamv.edu.ni", true},
     
     {22011275, "CESAR AUGUSTO SILVA HERNANDEZ", "FACULTAD DE INGENIERIA Y ARQUITECTURA",
-    "INGENIERIA EN SISTEMAS DE INFORMACION", "casilva@uamv.edu.ni", false},
+    "INGENIERIA EN SISTEMAS DE INFORMACION", "casilva@uamv.edu.ni", true},
 
     {23010471, "KAREN MARIZA ROSA YOLANDA FONSECA VEGA", "FACULTAD DE INGENIERIA Y ARQUITECTURA",
     "INGENIERIA EN SISTEMAS DE INFORMACION", "kmryfonseca@uamv.edu.ni", true},
