@@ -10,6 +10,7 @@ void facultySearcher();
 void majorSearcher();
 void deliveredSearcher();
 void notDeliveredSearcher();
+void changeStatus();
 
 void menuMain(){
     int selectMenu;
@@ -21,6 +22,7 @@ void menuMain(){
     cout << "4. CARRERA" << endl;
     cout << "5. ENTREGADO" << endl;
     cout << "6. NO ENTREGADO" << endl;
+    cout << "7. Cambiar estado de entrega" << endl;
     cout << endl;
     cout << "---> ";
     cin >> selectMenu;
@@ -46,6 +48,9 @@ void menuMain(){
         
         case 6: notDeliveredSearcher();
             break;
+
+        case 7: changeStatus();
+        break;
 
         default: cout << "SALIO CON EXITO DE LOS FILTROS.";
             break;

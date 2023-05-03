@@ -4,7 +4,7 @@
 
 using namespace std;
 
-FILE * archive; // Crear archive Para Estructuras
+FILE * archive; // Crear archivo Para Estructuras
 
 //Prototipo de funciones
 void createFile();
@@ -14,6 +14,7 @@ void facultySearcher();
 void majorSearcher();
 void deliveredSearcher();
 void notDeliveredSearcher();
+void changeStatus();
 
 void createFile(int lastReg){
     archive = fopen("registro.dat", "w");
@@ -652,4 +653,44 @@ void notDeliveredSearcher(){
             cout << endl;
         }
     }
+}
+
+void changeStatus(){
+    int searchCIF;
+    int changeDel;
+    cout << "Introduce el cif de la persona al cual se le cambiara el estado: ";
+    cin >> searchCIF;
+            
+            bool found = false;
+            int index; 
+            for (int i = 0; i < 19; i++){
+                if (database[i].cif == searchCIF){
+                    found = true;
+                    index = i;
+                    break;
+                }
+            }
+            if (found) {
+                if (database[index].deliveredOrNot == false){ 
+                    cout << "Status: " << "No Entregado" << endl << endl;}
+                else{
+                    cout << "Status: " << "Entregado" << endl;}
+                if(database[index].deliveredOrNot == false){
+                    cout << "Si desea cambiar el estado a entregado introduzca 1: "; 
+                    cin >> changeDel;
+                    if (changeDel == 1)
+                    {
+                        database[index].deliveredOrNot = true;
+                        cout << "Cambio realizado exitosamente" << endl;
+                        if (database[index].deliveredOrNot == false){ 
+                    cout << "Status: " << "No Entregado" << endl << endl;}
+                    else{
+                    cout << "Status: " << "Entregado" << endl;}
+                    }
+
+                    
+                }
+            }else {
+                cout << searchCIF << " no fue encontrado en la base de datos. " << endl;
+            }
 }

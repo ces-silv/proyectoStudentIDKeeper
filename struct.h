@@ -13,7 +13,7 @@ typedef struct{
 //Declaracion e inicializacion
 studentsUAM database[] = {
     {18010053,"SILVIO ALEJANDRO MORA MENDOZA", "FACULTAD DE INGENIERIA Y ARQUITECTURA",
-    "INGENIERIA EN SISTEMAS DE INFORMACION", "samora@uamv.edu.ni", true},
+    "INGENIERIA EN SISTEMAS DE INFORMACION", "samora@uamv.edu.ni", false},
     
     {22011275, "CESAR AUGUSTO SILVA HERNANDEZ", "FACULTAD DE INGENIERIA Y ARQUITECTURA",
     "INGENIERIA EN SISTEMAS DE INFORMACION", "casilva@uamv.edu.ni", true},
