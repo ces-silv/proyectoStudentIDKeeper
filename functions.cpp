@@ -31,6 +31,7 @@ void createFile(int lastReg){
 
 void cifSearcher(){
     int searchCIF;
+            cout << endl;
             cout << "Ingresa el numero de carnet del estudiante:" << endl;
             cout << "---> ";
             cin >> searchCIF;
@@ -61,13 +62,15 @@ void cifSearcher(){
                     cout << "Status: " << "Entregado" << endl;}
                     
             }else {
-                cout << searchCIF << " no fue encontrado en la base de datos. " << endl;
+                cout << searchCIF << " no fue encontrado en el registro. " << endl;
             }
 }
 
 void nameSearcher() {
     string searchName;
-    cout << "Ingrese el nombre a buscar" << endl;
+    cout << endl;
+    cout << "Ingrese el nombre a buscar:" << endl;
+    cout << "---> ";
     getline(cin, searchName); // Se utiliza getline() para leer toda la línea
 
     system("cls || clear");
@@ -93,6 +96,7 @@ void nameSearcher() {
 
 void facultySearcher(){
     int searchFaculty;
+    cout << endl;
     cout << "Selecciona la facultad a buscar" << endl;
     cout << "1. Facultad de Odontologia" << endl;
     cout << "2. Facultad de Ciencias Medicas" << endl;
@@ -242,6 +246,7 @@ void facultySearcher(){
 
 void majorSearcher() {
     int searchMajor;
+    cout << endl;
     cout << "Seleccione la carrera a buscar" << endl;
     cout<< "1. Derecho" <<endl;
     cout<< "2. Diplomacia y Relaciones Internacionales" <<endl;
@@ -624,6 +629,7 @@ void majorSearcher() {
 }
 
 void deliveredSearcher(){
+    cout << endl;
     cout << "Informacion estudiantil" << endl;
     cout << endl;
     for(int i = 0; i < 19; i++){
@@ -640,6 +646,7 @@ void deliveredSearcher(){
 }
 
 void notDeliveredSearcher(){
+    cout << endl;
     cout << "Informacion estudiantil" << endl;
     cout << endl;
     for(int i = 0; i < 19; i++){
