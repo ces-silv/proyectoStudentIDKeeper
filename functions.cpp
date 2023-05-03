@@ -698,6 +698,6 @@ void changeStatus(){
                     
                 }
             }else {
-                cout << searchCIF << " no fue encontrado en la base de datos. " << endl;
+                cout << searchCIF << " no fue encontrado en el registro. " << endl;
             }
 }
