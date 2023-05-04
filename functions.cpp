@@ -16,19 +16,6 @@ void deliveredSearcher();
 void notDeliveredSearcher();
 void changeStatus();
 
-void createFile(int lastReg){
-    archive = fopen("registro.dat", "w");
-    for (int i = 0; i < lastReg; i++){
-        fprintf(archive, "%i\n", database[i].cif);
-        fprintf(archive, "%s\n", database[i].name);
-        fprintf(archive, "%s\n", database[i].faculty);
-        fprintf(archive, "%s\n", database[i].major);
-        fprintf(archive, "%s\n", database[i].email);
-        fprintf(archive, "%i\n", database[i].deliveredOrNot);
-    }
-    
-}
-
 void cifSearcher(){
     int searchCIF;
             cout << endl;
@@ -47,7 +34,7 @@ void cifSearcher(){
             }
             if (found) {
                 cout << endl;
-                cout << searchCIF << " fue encontrado en la base de datos." << endl;
+                cout << searchCIF << " fue encontrado en el registro." << endl;
                 cout << endl;
                 cout << "Informacion estudiantil" << endl;
                 cout << endl;
@@ -97,7 +84,7 @@ void nameSearcher() {
 void facultySearcher(){
     int searchFaculty;
     cout << endl;
-    cout << "Selecciona la facultad a buscar" << endl;
+    cout << "Selecciona la facultad a buscar:" << endl;
     cout << "1. Facultad de Odontologia" << endl;
     cout << "2. Facultad de Ciencias Medicas" << endl;
     cout << "3. Facultad de Marketing, Diseño y Ciencias de la Comunicacion" << endl;
@@ -247,7 +234,7 @@ void facultySearcher(){
 void majorSearcher() {
     int searchMajor;
     cout << endl;
-    cout << "Seleccione la carrera a buscar" << endl;
+    cout << "Seleccione la carrera a buscar:" << endl;
     cout<< "1. Derecho" <<endl;
     cout<< "2. Diplomacia y Relaciones Internacionales" <<endl;
     cout<< "3. Medicina" <<endl;

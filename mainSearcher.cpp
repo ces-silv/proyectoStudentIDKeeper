@@ -81,7 +81,7 @@ void returnToMenu(){
         
         default: 
             system("cls");
-            cout<<"Ingreso un numero invalido. Vuelva a intentarlo." << endl;
+            cout<<"Ha ingresado un numero invalido. Vuelva a intentarlo." << endl;
             returnToMenu();
             break;
     }
