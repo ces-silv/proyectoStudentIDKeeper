@@ -17,7 +17,7 @@ int main(){
     cout << "---> ";
     cin >> lastRegister;
 
-    system("cls");
+    system("clear || cls");
 
     cout << "SELECCIONA UNA ACCION:" << endl;
     cout << "1. Crear un archivo con el ultimo registro" << endl;
@@ -29,9 +29,9 @@ int main(){
 
     switch(selectAction){
         case 1: createRegister(lastRegister); break;
-        case 2: system("cls"); readRegisterOnScreen(); break;
-        case 3: system("cls"); addInformation(lastRegister); break;
-        default: system("cls"); cout << "Ha salido con exito"; break;
+        case 2: system("clear || cls"); readRegisterOnScreen(); break;
+        case 3: system("clear || cls"); addInformation(lastRegister); break;
+        default: system("clear || cls"); cout << "Ha salido con exito"; break;
     }
     return 0;
 }
