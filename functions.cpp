@@ -663,41 +663,56 @@ void notDeliveredSearcher(){
 }
 
 void changeStatus(){
-    int searchCIF;
-    int changeDel;
-    cout << "Introduce el cif de la persona al cual se le cambiara el estado: ";
-    cin >> searchCIF;
-            
-            bool found = false;
-            int index; 
-            for (int i = 0; i < 19; i++){
-                if (database[i].cif == searchCIF){
-                    found = true;
-                    index = i;
-                    break;
-                }
-            }
-            if (found) {
-                if (database[index].deliveredOrNot == false){ 
-                    cout << "Status: " << "No Entregado" << endl << endl;}
-                else{
-                    cout << "Status: " << "Entregado" << endl;}
-                if(database[index].deliveredOrNot == false){
-                    cout << "Si desea cambiar el estado a entregado introduzca 1: "; 
-                    cin >> changeDel;
-                    if (changeDel == 1)
-                    {
-                        database[index].deliveredOrNot = true;
-                        cout << "Cambio realizado exitosamente" << endl;
-                        if (database[index].deliveredOrNot == false){ 
-                    cout << "Status: " << "No Entregado" << endl << endl;}
-                    else{
-                    cout << "Status: " << "Entregado" << endl;}
-                    }
+    int changeStatus;
+    bool realChange;
+    cout << "Introduce el cif de la persona al cual se le cambiara el estado." << endl;
+    cout << "---> ";
+    cin >> changeStatus;
+    
+    bool found = false;
+    int index; 
+    for (int i = 0; i < 19; i++){
+        if (database[i].cif == changeStatus){
+            found = true;
+            index = i;
+            break;
+        }
+    }
 
-                    
-                }
-            }else {
-                cout << searchCIF << " no fue encontrado en el registro. " << endl;
+    if (found) {
+        cout << endl;
+        cout << changeStatus << " fue encontrado en la base de datos." << endl;
+        cout << endl;
+        cout << "CIF: " << database[index].cif << endl;
+        cout << "Nombre: " <<database[index].name << endl;
+        cout << "Facultad: " <<database[index].faculty << endl;
+        cout << "Carrera: " <<database[index].major << endl;
+        cout << "email: " <<database[index].email << endl;
+        
+        if (database[index].deliveredOrNot == false){ 
+            cout << "El estado actual del carnet esta marcado como NO ENTREGADO" <<endl;
+            cout << "Desea cambiarlo a ENTREGADO ?" << endl;
+            cout << "Si desea realizar el cambio ingrese el numero 1" << endl;
+            cin >> realChange;
+            if (realChange == 1){
+                database[index].deliveredOrNot = true;
+                cout << "El estatus ha cambiado a ENTREGADO exitosamente." << endl;
             }
+        }
+
+        else{
+            cout << "El estado actual del carnet esta marcado como ENTREGADO" <<endl;
+            cout << "Desea cambiarlo a NO ENTREGADO ?" << endl;
+            cout << "Si desea realizar el cambio ingrese el numero 1" << endl;
+            cin >> realChange;
+            if (realChange == 1){
+                database[index].deliveredOrNot = false;
+                cout << "El estatus ha cambiado a NO ENTREGADO exitosamente." << endl;
+            }
+        }
+    }
+    
+    else {
+        cout << changeStatus << " no fue encontrado en el registro. " << endl;
+    }
 }
