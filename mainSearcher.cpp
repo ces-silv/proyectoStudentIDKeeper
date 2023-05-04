@@ -70,7 +70,7 @@ void returnToMenu(){
 
     switch (options){
         case 1: 
-            system("cls");
+            system("clear || cls");
             menuMain();
             break;
 
@@ -80,7 +80,7 @@ void returnToMenu(){
             break;
         
         default: 
-            system("cls");
+            system("clear || cls");
             cout<<"Ha ingresado un numero invalido. Vuelva a intentarlo." << endl;
             returnToMenu();
             break;
