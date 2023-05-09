@@ -15,19 +15,19 @@ int main(){
     string correctUser = "admin";
     string correctPass = "1234";
     string typUser, typPass;
-    char c;
-    int trial = 0, left = 3;
+    char charAst;
+    int attemptsLeft = 3;
 
-    while (trial < 3){ /* El while permite que haya un maximo de 3 intentos fallidos */
+    while (attemptsLeft > 0){ /* El while permite que haya un maximo de 3 intentos fallidos */
         cout<<"Ingrese su nombre de usuario: ";
         cin>>typUser;
         cout<<"Ingrese su contrasena: ";
         typPass = "";
 #ifdef _WIN32
         while (true) {
-            c = getch();
-            if (c == 13){break;} // Si se presiona Enter, terminar el bucle
-            if (c == 8) { // Si se presiona Borrar, borrar el último caracter de la contraseña
+            charAst = getch();
+            if (charAst == 13){break;} // Si se presiona Enter, terminar el bucle
+            if (charAst == 8) { // Si se presiona Borrar, borrar el último caracter de la contraseña
                 if (typPass.length() > 0) {
                     typPass.erase(typPass.length() - 1);
                     cout << "\b \b"; // Borrar el ultimo asterisco ingresado, \b es igual a decir 8 en sistema ASCII
@@ -42,18 +42,18 @@ int main(){
 #else
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
         system("stty -echo");
-        c = cin.get();
-        while (c != '\n') {
-            if (c == 127 || c == 8) { // Si se presiona Borrar o Retroceso, borrar el último caracter de la contraseña
+        charAst = cin.get();
+        while (charAst != '\n') {
+            if (charAst == 127 || charAst == 8) { // Si se presiona Borrar o Retroceso, borrar el último caracter de la contraseña
                 if (typPass.length() > 0) {
                     typPass.erase(typPass.length() - 1);
                     cout << "\b \b"; // Borrar el ultimo asterisco ingresado
                 }
             } else {
-                typPass += c;
+                typPass += charAst;
                 cout << "*"; // Reemplaza los caracteres que ingrese el usuario por asteriscos
             }
-            c = cin.get();
+            charAst = cin.get();
         }
         cout << endl;
         system("stty echo");
@@ -69,15 +69,15 @@ int main(){
 
         else{
             system("clear || cls");
-            trial++, left--;
-            cout<<"Usuario o contrasena incorrectos - Tiene "<<left<<" intentos disponibles."<<endl;
+            attemptsLeft--;
+            cout<<"Usuario o contrasena incorrectos - Tiene "<<attemptsLeft<<" intentos disponibles."<<endl;
         }
     }
 
-    if (trial == 3 && left == 0){ /* Restriccion si se llega al limite de intentos */
+    if (attemptsLeft == 0){ /* Restriccion si se llega al limite de intentos */
         system("clear || cls");
         cout << "Ha excedido el maximos de intentos permitidos." << endl;
     }
 
     return 0;
-}
+} 
