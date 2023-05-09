@@ -35,7 +35,7 @@ int main(){
             }
 
             else{
-                typPass += c;
+                typPass += charAst;
                 cout << "*"; // Reemplaza los caracteres que ingrese el usuario por asteriscos
             }
         }
