@@ -12,8 +12,8 @@ void cifSearcher();
 void nameSearcher();
 void facultySearcher();
 void majorSearcher();
-void deliveredSearcher();
-void notDeliveredSearcher();
+void deliveredShow();
+void notDeliveredShow();
 void changeStatus();
 
 void cifSearcher(){
@@ -615,7 +615,7 @@ void majorSearcher() {
     }
 }
 
-void deliveredSearcher(){
+void deliveredShow(){
     cout << endl;
     cout << "Informacion estudiantil" << endl;
     cout << endl;
@@ -632,7 +632,7 @@ void deliveredSearcher(){
     }
 }
 
-void notDeliveredSearcher(){
+void notDeliveredShow(){
     cout << endl;
     cout << "Informacion estudiantil" << endl;
     cout << endl;

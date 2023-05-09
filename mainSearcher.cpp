@@ -8,8 +8,8 @@ void cifSearcher();
 void nameSearcher();
 void facultySearcher();
 void majorSearcher();
-void deliveredSearcher();
-void notDeliveredSearcher();
+void deliveredShow();
+void notDeliveredShow();
 void changeStatus();
 void returnToMenu();
 
@@ -44,10 +44,10 @@ void menuMain(){
         case 4: majorSearcher(); returnToMenu();
             break;
                 
-        case 5: deliveredSearcher(); returnToMenu();
+        case 5: deliveredShow(); returnToMenu();
             break;
         
-        case 6: notDeliveredSearcher(); returnToMenu();
+        case 6: notDeliveredShow(); returnToMenu();
             break;
 
         case 7: changeStatus(); returnToMenu();
