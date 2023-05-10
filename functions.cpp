@@ -1,3 +1,4 @@
+//Archivo de todas las funciones que usa el programa
 #include <iostream>
 #include <string.h>
 #include "struct.h"
@@ -16,6 +17,7 @@ void deliveredShow();
 void notDeliveredShow();
 void changeStatus();
 
+//Prototipo de funciones para crear registros
 void createRegister(int lastRegister);
 void readRegisterOnScreen();
 void addInformation(int lastRegister);
@@ -27,7 +29,9 @@ void cifSearcher(){
             cout << "Ingresa el numero de carnet del estudiante:" << endl;
             cout << "---> ";
             cin >> searchCIF;
-            
+            /* Se usa un booleano con valor inicial de falso, con el for se busca entre 
+            la lista de estudiantes y si el cif introducido concuerda con alguno del arreglo, 
+            el bool cambiara a verdadero y mostrara la informacion de todos los estudiantes*/
             bool found = false;
             int index; 
             for (int i = 0; i < 19; i++){
@@ -70,8 +74,9 @@ void nameSearcher() {
     cout << endl;
     for(int i = 0; i < 100; i++) {
         string name = database[i].name;
-        if(name.compare(searchName) == 0) { /* Se utiliza para verificar si la cadena de caracteres contenida en la variable "faculty" es igual a "INGSIS" */
-            // compare regresa numeros enteros y solo en caso que sea igual es que regresa el numero 0, es aqui el porque del == 0
+        if(name.compare(searchName) == 0) { /* Se utiliza el name compare para comparar el nombre
+        introducido por el usuario, con los nombres que estan registrados en el arreglo de la estructura.
+        Si concuerda, mostrara la informacion del estudiante */
             cout << "CIF: " << database[i].cif << endl;
             cout << "Nombre: " << database[i].name << endl;
             cout << "Facultad: " << database[i].faculty << endl;
@@ -107,8 +112,7 @@ void facultySearcher(){
     cout << endl;
     for(int i = 0; i < 19; i++) {
         string faculty = database[i].faculty;
-        if(faculty.compare("FACULTAD DE ODONTOLOGIA") == 0) { /* Se utiliza para verificar si la cadena de caracteres contenida en la variable "faculty" es igual a "INGSIS" */
-            // compare regresa numeros enteros y solo en caso que sea igual es que regresa el numero 0, es aqui el porque del == 0
+        if(faculty.compare("FACULTAD DE ODONTOLOGIA") == 0) {
             cout << "CIF: " << database[i].cif << endl;
             cout << "Nombre: " << database[i].name << endl;
             cout << "Facultad: " << database[i].faculty << endl;

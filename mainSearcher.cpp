@@ -13,6 +13,7 @@ void notDeliveredShow();
 void changeStatus();
 void returnToMenu();
 
+//Menu principal del programa
 void menuMain(){
     int selectMenu;
     cout << endl;
@@ -61,6 +62,7 @@ void menuMain(){
     }
 }
 
+//Funciona para regresar al menu principal desde la consola
 void returnToMenu(){
     int options;
     cout << endl;

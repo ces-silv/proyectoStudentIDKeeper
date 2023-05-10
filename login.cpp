@@ -1,9 +1,18 @@
 #include <iostream>
 #include <string>
 #include <limits>
+ /*límites de los diferentes tipos de datos, como el número máximo 
+ y mínimo que se puede almacenar en un tipo de dato específico.*/
 #include <cstdlib>
+/*funcionalidades generales de la biblioteca estándar de C. 
+Incluye funciones como system() para ejecutar comandos del sistema operativo 
+y exit() para finalizar la ejecución del programa.*/
 #include <stdlib.h>
+/*Esta es una biblioteca de C que proporciona 
+funcionalidades relacionadas con la gestión de memoria y otras operaciones estándar.*/
 #include <fstream>
+/*funcionalidades para trabajar con archivos. 
+Incluye clases y funciones para leer y escribir datos en archivos.*/
 #include "mainSearcher.cpp"
 
 #ifdef _WIN32

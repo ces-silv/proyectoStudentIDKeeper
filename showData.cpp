@@ -8,8 +8,7 @@ using namespace std;
 int main()
 {
     cout << "Informacion estudiantil" << endl;
-    for( int i = 0; i < 19; i++)
-    {
+    for( int i = 0; i < 19; i++){
         cout << "CIF: " << database[i].cif << endl;
         cout << "Nombre: " <<database[i].name << endl;
         cout << "Facultad: " <<database[i].faculty << endl;
@@ -19,7 +18,6 @@ int main()
             cout << "Status: " << "No Entregado" << endl << endl;}
         else{
             cout << "Status: " << "Entregado" << endl << endl;}
-
     }
     return 0;
 }
