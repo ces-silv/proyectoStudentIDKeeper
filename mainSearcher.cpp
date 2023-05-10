@@ -24,6 +24,7 @@ void menuMain(){
     cout << "5. ENTREGADO" << endl;
     cout << "6. NO ENTREGADO" << endl;
     cout << "7. CAMBIAR ESTADO DE ENTREGA" << endl;
+    cout << "8. Menu de Registros" << endl;
     cout << endl;
     cout << "---> ";
     cin >> selectMenu;
@@ -52,6 +53,8 @@ void menuMain(){
 
         case 7: changeStatus(); returnToMenu();
         break;
+
+        case 8: registerMenu(); returnToMenu();
 
         default: cout << "SALIO CON EXITO DE LOS FILTROS.";
             break;

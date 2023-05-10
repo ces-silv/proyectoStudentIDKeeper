@@ -2,6 +2,8 @@
 #include <string>
 #include <limits>
 #include <cstdlib>
+#include <stdlib.h>
+#include <fstream>
 #include "mainSearcher.cpp"
 
 #ifdef _WIN32
