@@ -8,7 +8,7 @@ using namespace std;
 #define MAX 100
 //Estrucutura de los datos de los estudiantes
 typedef struct{
-    int cif;
+    char cif[9];
     char name[100];
     char faculty[100];
     char major[100];
@@ -30,7 +30,7 @@ void addStudent(studentsUAM st);
 void showStudent(int pos);
 int isStudent(char cif[]);
 void showStudents();
-void starStudents(int pos);
+void startStudents(int pos);
 studentsUAM getStudent(int pos);
 
 //Update
@@ -107,7 +107,7 @@ void deleteStudent(int pos){
         database[i] = database[i+1];
     }
     lastReg--;
-    startStudent(lastReg);
+    startStudents(lastReg);
 }
 
 void startStudent(int pos){
@@ -151,7 +151,7 @@ void start(){
     readStudents();
     do
     {
-        system("clear || cls")
+        system("clear || cls");
 
         op = menu();
         switch (op)
@@ -274,7 +274,7 @@ void readStudents(){
         return;
     }
     lastReg = calcLastReg(studentRegister);
-    fread(studentsUAM, sizeof(database), MAX, studentRegister);
+    fread(database, sizeof(database), MAX, studentRegister);
 
     fclose(studentRegister);
 }
