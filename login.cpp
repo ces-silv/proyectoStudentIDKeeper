@@ -13,7 +13,7 @@ funcionalidades relacionadas con la gesti√≥n de memoria y otras operaciones est√
 #include <fstream>
 /*funcionalidades para trabajar con archivos. 
 Incluye clases y funciones para leer y escribir datos en archivos.*/
-#include "mainSearcher.cpp"
+#include "mainFunctions.cpp"
 
 #ifdef _WIN32
 #include <conio.h> // Solo para Windows
@@ -73,8 +73,8 @@ int main(){
 
         /* Restriccion para que se se pueda o no logear el usuario */
         if (typUser == correctUser && typPass == correctPass){
-            cout<<"Un saludito "<<correctUser<<endl;
-            menuMain();
+            system("clear || cls");
+            start();
             break;
         } 
 
