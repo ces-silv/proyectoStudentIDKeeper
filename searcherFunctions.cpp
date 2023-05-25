@@ -1,63 +1,41 @@
 #include <iostream>
 #include <string.h>
+#include "struct.h"
 #include "mainFunctions.cpp"
-
 using namespace std;
 
 //Prototipo de funciones
-void createFile();
 void cifSearcher();
 void nameSearcher();
 void facultySearcher();
 void majorSearcher();
 void deliveredShow();
 void notDeliveredShow();
-void changeStatus();
-
-//Prototipo de funciones para crear registros
-void createRegister(int lastRegister);
-void readRegisterOnScreen();
-void addInformation(int lastRegister);
-void registerMenu();
 
 void cifSearcher(){
-    int searchCIF;
-            cout << endl;
-            cout << "Ingresa el numero de carnet del estudiante:" << endl;
-            cout << "---> ";
-            cin >> searchCIF;
-            /* Se usa un booleano con valor inicial de falso, con el for se busca entre 
-            la lista de estudiantes y si el cif introducido concuerda con alguno del arreglo, 
-            el bool cambiara a verdadero y mostrara la informacion de todos los estudiantes*/
-            bool found = false;
-            int index; 
-            for (int i = 0; i < 19; i++){
-                if (database[i].cif == searchCIF){
-                    found = true;
-                    index = i;
-                    break;
-                }
-            }
-            if (found) {
-                cout << endl;
-                cout << searchCIF << " fue encontrado en el registro." << endl;
-                cout << endl;
-                cout << "Informacion estudiantil" << endl;
-                cout << endl;
-                cout << "CIF: " << database[index].cif << endl;
-                cout << "Nombre: " <<database[index].name << endl;
-                cout << "Facultad: " <<database[index].faculty << endl;
-                cout << "Carrera: " <<database[index].major << endl;
-                cout << "email: " <<database[index].email << endl;
-                if (database[index].deliveredOrNot == false){ 
-                    cout << "Status: " << "No Entregado" << endl << endl;}
-                else{
-                    cout << "Status: " << "Entregado" << endl;}
-                    
-            }else {
-                cout << searchCIF << " no fue encontrado en el registro. " << endl;
-            }
+    string searchCif;
+    cout << endl;
+    cout << "Ingrese el nombre a buscar:" << endl;
+    cout << "---> ";
+    getline(cin, searchCif); // Se utiliza getline() para leer toda la línea
+    system("cls || clear");
+    cout << "Informacion estudiantil" << endl;
+    cout << endl;
+    for(int i = 0; i < MAX; i++) {
+        string cif = students[i].cif;
+        if(cif.compare(searchCif) == 0) { /* Se utiliza el name compare para comparar el cif
+        introducido por el usuario, con los nombres que estan registrados en el arreglo de la estructura.
+        Si concuerda, mostrara la informacion del estudiante */
+            cout << "CIF: " << students[i].cif << endl;
+            cout << "Nombre: " << students[i].fullname << endl;
+            cout << "Facultad: " << students[i].faculty << endl;
+            cout << "Carrera: " << students[i].major << endl;
+            cout << "Email: " << students[i].email << endl;
+            cout << "Estado de Entrega: " << students[i].deliveredOrNot << endl;
+            cout << "Fecha de entrega: " << students[i].dateOfDelivery.day << "/" << students[i].dateOfDelivery.month << "/" << students[i].dateOfDelivery.year << endl;
 }
+    }
+}   
 
 void nameSearcher() {
     string searchName;
@@ -65,25 +43,21 @@ void nameSearcher() {
     cout << "Ingrese el nombre a buscar:" << endl;
     cout << "---> ";
     getline(cin, searchName); // Se utiliza getline() para leer toda la línea
-
     system("cls || clear");
     cout << "Informacion estudiantil" << endl;
     cout << endl;
-    for(int i = 0; i < 100; i++) {
-        string name = database[i].name;
-        if(name.compare(searchName) == 0) { /* Se utiliza el name compare para comparar el nombre
+    for(int i = 0; i < MAX; i++) {
+        string fullname = students[i].fullname;
+        if(fullname.compare(searchName) == 0) { /* Se utiliza el name compare para comparar el nombre
         introducido por el usuario, con los nombres que estan registrados en el arreglo de la estructura.
         Si concuerda, mostrara la informacion del estudiante */
-            cout << "CIF: " << database[i].cif << endl;
-            cout << "Nombre: " << database[i].name << endl;
-            cout << "Facultad: " << database[i].faculty << endl;
-            cout << "Carrera: " << database[i].major << endl;
-            cout << "email: " << database[i].email << endl;
-            if (database[i].deliveredOrNot == false){ 
-                cout << "Status: " << "No Entregado" << endl << endl;}
-            else{
-                cout << "Status: " << "Entregado" << endl << endl;}
-            cout << endl;
+            cout << "CIF: " << students[i].cif << endl;
+            cout << "Nombre: " << students[i].fullname << endl;
+            cout << "Facultad: " << students[i].faculty << endl;
+            cout << "Carrera: " << students[i].major << endl;
+            cout << "email: " << students[i].email << endl;
+            cout << "Estado de Entrega: " << students[i].deliveredOrNot << endl;
+            cout << "Fecha de entrega: " << students[i].dateOfDelivery.day << "/" << students[i].dateOfDelivery.month << "/" << students[i].dateOfDelivery.year << endl;
         }
     }
 }
@@ -107,19 +81,16 @@ void facultySearcher(){
     system("cls || clear");
     cout << "Informacion estudiantil" << endl;
     cout << endl;
-    for(int i = 0; i < 19; i++) {
-        string faculty = database[i].faculty;
+    for(int i = 0; i < MAX ; i++) {
+        string faculty = students[i].faculty;
         if(faculty.compare("FACULTAD DE ODONTOLOGIA") == 0) {
-            cout << "CIF: " << database[i].cif << endl;
-            cout << "Nombre: " << database[i].name << endl;
-            cout << "Facultad: " << database[i].faculty << endl;
-            cout << "Carrera: " << database[i].major << endl;
-            cout << "email: " << database[i].email << endl;
-            if (database[i].deliveredOrNot == false){ 
-                cout << "Status: " << "No Entregado" << endl << endl;}
-            else{
-                cout << "Status: " << "Entregado" << endl << endl;}
-            cout << endl;
+            cout << "CIF: " << students[i].cif << endl;
+            cout << "Nombre: " << students[i].fullname << endl;
+            cout << "Facultad: " << students[i].faculty << endl;
+            cout << "Carrera: " << students[i].major << endl;
+            cout << "email: " << students[i].email << endl;
+            cout << "Estado de Entrega: " << students[i].deliveredOrNot << endl;
+            cout << "Fecha de entrega: " << students[i].dateOfDelivery.day << "/" << students[i].dateOfDelivery.month << "/" << students[i].dateOfDelivery.year << endl;
         }
     }  
         break;
@@ -129,39 +100,33 @@ void facultySearcher(){
     cout << "Informacion estudiantil" << endl;
     cout << endl;
     for(int i = 0; i < 19; i++) {
-        string faculty = database[i].faculty;
+        string faculty = students[i].faculty;
         if(faculty.compare("FACULTAD DE CIENCIAS MEDICAS") == 0) {
-            cout << "CIF: " << database[i].cif << endl;
-            cout << "Nombre: " << database[i].name << endl;
-            cout << "Facultad: " << database[i].faculty << endl;
-            cout << "Carrera: " << database[i].major << endl;
-            cout << "email: " << database[i].email << endl;
-            if (database[i].deliveredOrNot == false){ 
-                cout << "Status: " << "No Entregado" << endl << endl;}
-            else{
-                cout << "Status: " << "Entregado" << endl << endl;}
-            cout << endl;
+            cout << "CIF: " << students[i].cif << endl;
+            cout << "Nombre: " << students[i].fullname << endl;
+            cout << "Facultad: " << students[i].faculty << endl;
+            cout << "Carrera: " << students[i].major << endl;
+            cout << "email: " << students[i].email << endl;
+            cout << "Estado de Entrega: " << students[i].deliveredOrNot << endl;
+            cout << "Fecha de entrega: " << students[i].dateOfDelivery.day << "/" << students[i].dateOfDelivery.month << "/" << students[i].dateOfDelivery.year << endl;
         }
-    }   
-        break; 
+    } 
+    break; 
 
     case 3: // FACULTAD DE MARKETING, DISEÑO Y CIENCIAS DE LA COMUNICACION
         system("cls || clear");
         cout << "Informacion estudiantil" << endl;
         cout << endl;
         for(int i = 0; i < 19; i++) {
-            string faculty = database[i].faculty;
+            string faculty = students[i].faculty;
             if(faculty.compare("FACULTAD DE MARKETING, DISEÑO Y CIENCIAS DE LA COMUNICACION") == 0) {
-            cout << "CIF: " << database[i].cif << endl;
-            cout << "Nombre: " << database[i].name << endl;
-            cout << "Facultad: " << database[i].faculty << endl;
-            cout << "Carrera: " << database[i].major << endl;
-            cout << "email: " << database[i].email << endl;
-            if (database[i].deliveredOrNot == false){ 
-                cout << "Status: " << "No Entregado" << endl << endl;}
-            else{
-                cout << "Status: " << "Entregado" << endl << endl;}
-            cout << endl;
+            cout << "CIF: " << students[i].cif << endl;
+            cout << "Nombre: " << students[i].fullname << endl;
+            cout << "Facultad: " << students[i].faculty << endl;
+            cout << "Carrera: " << students[i].major << endl;
+            cout << "email: " << students[i].email << endl;
+            cout << "Estado de Entrega: " << students[i].deliveredOrNot << endl;
+            cout << "Fecha de entrega: " << students[i].dateOfDelivery.day << "/" << students[i].dateOfDelivery.month << "/" << students[i].dateOfDelivery.year << endl;
         }
     }  
         break;
@@ -171,18 +136,15 @@ void facultySearcher(){
         cout << "Informacion estudiantil" << endl;
         cout << endl;
         for(int i = 0; i < 19; i++) {
-            string faculty = database[i].faculty;
+            string faculty = students[i].faculty;
             if(faculty.compare("FACULTAD DE CIENCIAS ADMINISTRATIVAS Y ECONOMICAS") == 0) {
-            cout << "CIF: " << database[i].cif << endl;
-            cout << "Nombre: " << database[i].name << endl;
-            cout << "Facultad: " << database[i].faculty << endl;
-            cout << "Carrera: " << database[i].major << endl;
-            cout << "email: " << database[i].email << endl;
-            if (database[i].deliveredOrNot == false){ 
-                cout << "Status: " << "No Entregado" << endl << endl;}
-            else{
-                cout << "Status: " << "Entregado" << endl << endl;}
-            cout << endl;
+            cout << "CIF: " << students[i].cif << endl;
+            cout << "Nombre: " << students[i].fullname << endl;
+            cout << "Facultad: " << students[i].faculty << endl;
+            cout << "Carrera: " << students[i].major << endl;
+            cout << "email: " << students[i].email << endl;
+            cout << "Estado de Entrega: " << students[i].deliveredOrNot << endl;
+            cout << "Fecha de entrega: " << students[i].dateOfDelivery.day << "/" << students[i].dateOfDelivery.month << "/" << students[i].dateOfDelivery.year << endl;
         }
     }  
         break;
@@ -192,18 +154,15 @@ void facultySearcher(){
         cout << "Informacion estudiantil" << endl;
         cout << endl;
         for(int i = 0; i < 19; i++) {
-            string faculty = database[i].faculty;
+            string faculty = students[i].faculty;
             if(faculty.compare("FACULTAD DE INGENIERIA Y ARQUITECTURA") == 0) {
-            cout << "CIF: " << database[i].cif << endl;
-            cout << "Nombre: " << database[i].name << endl;
-            cout << "Facultad: " << database[i].faculty << endl;
-            cout << "Carrera: " << database[i].major << endl;
-            cout << "email: " << database[i].email << endl;
-            if (database[i].deliveredOrNot == false){ 
-                cout << "Status: " << "No Entregado" << endl << endl;}
-            else{
-                cout << "Status: " << "Entregado" << endl << endl;}
-            cout << endl;
+            cout << "CIF: " << students[i].cif << endl;
+            cout << "Nombre: " << students[i].fullname << endl;
+            cout << "Facultad: " << students[i].faculty << endl;
+            cout << "Carrera: " << students[i].major << endl;
+            cout << "email: " << students[i].email << endl;
+            cout << "Estado de Entrega: " << students[i].deliveredOrNot << endl;
+            cout << "Fecha de entrega: " << students[i].dateOfDelivery.day << "/" << students[i].dateOfDelivery.month << "/" << students[i].dateOfDelivery.year << endl;
         }
     }  
         break;
@@ -213,18 +172,15 @@ void facultySearcher(){
         cout << "Informacion estudiantil" << endl;
         cout << endl;
         for(int i = 0; i < 19; i++) {
-            string faculty = database[i].faculty;
+            string faculty = students[i].faculty;
             if(faculty.compare("FACULTAD DE CIENCIAS JURIDICAS Y RELACIONES INTERNACIONALES") == 0) {
-            cout << "CIF: " << database[i].cif << endl;
-            cout << "Nombre: " << database[i].name << endl;
-            cout << "Facultad: " << database[i].faculty << endl;
-            cout << "Carrera: " << database[i].major << endl;
-            cout << "email: " << database[i].email << endl;
-            if (database[i].deliveredOrNot == false){ 
-                cout << "Status: " << "No Entregado" << endl << endl;}
-            else{
-                cout << "Status: " << "Entregado" << endl << endl;}
-            cout << endl;
+            cout << "CIF: " << students[i].cif << endl;
+            cout << "Nombre: " << students[i].fullname << endl;
+            cout << "Facultad: " << students[i].faculty << endl;
+            cout << "Carrera: " << students[i].major << endl;
+            cout << "email: " << students[i].email << endl;
+            cout << "Estado de Entrega: " << students[i].deliveredOrNot << endl;
+            cout << "Fecha de entrega: " << students[i].dateOfDelivery.day << "/" << students[i].dateOfDelivery.month << "/" << students[i].dateOfDelivery.year << endl;
         }
     }  
         break;
@@ -259,26 +215,22 @@ void majorSearcher() {
     cout<< "16. Arquitectura" <<endl;
     cout << endl;
     cout << "---> "; cin >> searchMajor;
-
     switch (searchMajor){
     case 1: // DERECHO
     system("cls || clear"); 
     cout << "Informacion estudiantil" << endl;
     cout << endl;
-    for(int i = 0; i < 16; i++) {
-        string major = database[i].major;
+    for(int i = 0; i < MAX; i++) {
+        string major = students[i].major;
         if(major.compare("DERECHO") == 0) { /* Se utiliza para verificar si la cadena de caracteres contenida en la variable "major" es igual a "INGSIS" */
             // compare regresa numeros enteros y solo en caso que sea igual es que regresa el numero 0, es aqui el porque del == 0
-            cout << "CIF: " << database[i].cif << endl;
-            cout << "Nombre: " << database[i].name << endl;
-            cout << "Facultad: " << database[i].faculty << endl;
-            cout << "Carrera: " << database[i].major << endl;
-            cout << "email: " << database[i].email << endl;
-            if (database[i].deliveredOrNot == false){ 
-                cout << "Status: " << "No Entregado" << endl << endl;}
-            else{
-                cout << "Status: " << "Entregado" << endl << endl;}
-            cout << endl;
+            cout << "CIF: " << students[i].cif << endl;
+            cout << "Nombre: " << students[i].fullname << endl;
+            cout << "Facultad: " << students[i].faculty << endl;
+            cout << "Carrera: " << students[i].major << endl;
+            cout << "email: " << students[i].email << endl;
+            cout << "Estado de Entrega: " << students[i].deliveredOrNot << endl;
+            cout << "Fecha de entrega: " << students[i].dateOfDelivery.day << "/" << students[i].dateOfDelivery.month << "/" << students[i].dateOfDelivery.year << endl;
         }
     } 
     break;
@@ -288,19 +240,16 @@ void majorSearcher() {
     cout << "Informacion estudiantil" << endl;
     cout << endl;
     for(int i = 0; i < 19; i++) {
-        string major = database[i].major;
+        string major = students[i].major;
         if(major.compare("DIPLOMACIA Y RELACIONES INTERNACIONALES") == 0) { /* Se utiliza para verificar si la cadena de caracteres contenida en la variable "major" es igual a "INGSIS" */
             // compare regresa numeros enteros y solo en caso que sea igual es que regresa el numero 0, es aqui el porque del == 0
-            cout << "CIF: " << database[i].cif << endl;
-            cout << "Nombre: " << database[i].name << endl;
-            cout << "Facultad: " << database[i].faculty << endl;
-            cout << "Carrera: " << database[i].major << endl;
-            cout << "email: " << database[i].email << endl;
-            if (database[i].deliveredOrNot == false){ 
-                cout << "Status: " << "No Entregado" << endl << endl;}
-            else{
-                cout << "Status: " << "Entregado" << endl << endl;}
-            cout << endl;
+            cout << "CIF: " << students[i].cif << endl;
+            cout << "Nombre: " << students[i].fullname << endl;
+            cout << "Facultad: " << students[i].faculty << endl;
+            cout << "Carrera: " << students[i].major << endl;
+            cout << "email: " << students[i].email << endl;
+            cout << "Estado de Entrega: " << students[i].deliveredOrNot << endl;
+            cout << "Fecha de entrega: " << students[i].dateOfDelivery.day << "/" << students[i].dateOfDelivery.month << "/" << students[i].dateOfDelivery.year << endl;
         }
     } 
     break;
@@ -310,19 +259,16 @@ void majorSearcher() {
     cout << "Informacion estudiantil" << endl;
     cout << endl;
     for(int i = 0; i < 19; i++) {
-        string major = database[i].major;
+        string major = students[i].major;
         if(major.compare("MEDICINA") == 0) { /* Se utiliza para verificar si la cadena de caracteres contenida en la variable "major" es igual a "INGSIS" */
             // compare regresa numeros enteros y solo en caso que sea igual es que regresa el numero 0, es aqui el porque del == 0
-            cout << "CIF: " << database[i].cif << endl;
-            cout << "Nombre: " << database[i].name << endl;
-            cout << "Facultad: " << database[i].faculty << endl;
-            cout << "Carrera: " << database[i].major << endl;
-            cout << "email: " << database[i].email << endl;
-            if (database[i].deliveredOrNot == false){ 
-                cout << "Status: " << "No Entregado" << endl << endl;}
-            else{
-                cout << "Status: " << "Entregado" << endl << endl;}
-            cout << endl;
+            out << "CIF: " << students[i].cif << endl;
+            cout << "Nombre: " << students[i].fullname << endl;
+            cout << "Facultad: " << students[i].faculty << endl;
+            cout << "Carrera: " << students[i].major << endl;
+            cout << "email: " << students[i].email << endl;
+            cout << "Estado de Entrega: " << students[i].deliveredOrNot << endl;
+            cout << "Fecha de entrega: " << students[i].dateOfDelivery.day << "/" << students[i].dateOfDelivery.month << "/" << students[i].dateOfDelivery.year << endl;
         }
     } 
     break;
@@ -332,19 +278,16 @@ void majorSearcher() {
     cout << "Informacion estudiantil" << endl;
     cout << endl;
     for(int i = 0; i < 19; i++) {
-        string major = database[i].major;
+        string major = students[i].major;
         if(major.compare("PSICOLOGIA") == 0) { /* Se utiliza para verificar si la cadena de caracteres contenida en la variable "major" es igual a "INGSIS" */
             // compare regresa numeros enteros y solo en caso que sea igual es que regresa el numero 0, es aqui el porque del == 0
-            cout << "CIF: " << database[i].cif << endl;
-            cout << "Nombre: " << database[i].name << endl;
-            cout << "Facultad: " << database[i].faculty << endl;
-            cout << "Carrera: " << database[i].major << endl;
-            cout << "email: " << database[i].email << endl;
-            if (database[i].deliveredOrNot == false){ 
-                cout << "Status: " << "No Entregado" << endl << endl;}
-            else{
-                cout << "Status: " << "Entregado" << endl << endl;}
-            cout << endl;
+            cout << "CIF: " << students[i].cif << endl;
+            cout << "Nombre: " << students[i].fullname << endl;
+            cout << "Facultad: " << students[i].faculty << endl;
+            cout << "Carrera: " << students[i].major << endl;
+            cout << "email: " << students[i].email << endl;
+            cout << "Estado de Entrega: " << students[i].deliveredOrNot << endl;
+            cout << "Fecha de entrega: " << students[i].dateOfDelivery.day << "/" << students[i].dateOfDelivery.month << "/" << students[i].dateOfDelivery.year << endl;
         }
     } 
     break;
@@ -354,19 +297,16 @@ void majorSearcher() {
     cout << "Informacion estudiantil" << endl;
     cout << endl;
     for(int i = 0; i < 19; i++) {
-        string major = database[i].major;
+        string major = students[i].major;
         if(major.compare("ODONTOLOGIA") == 0) { /* Se utiliza para verificar si la cadena de caracteres contenida en la variable "major" es igual a "INGSIS" */
             // compare regresa numeros enteros y solo en caso que sea igual es que regresa el numero 0, es aqui el porque del == 0
-            cout << "CIF: " << database[i].cif << endl;
-            cout << "Nombre: " << database[i].name << endl;
-            cout << "Facultad: " << database[i].faculty << endl;
-            cout << "Carrera: " << database[i].major << endl;
-            cout << "email: " << database[i].email << endl;
-            if (database[i].deliveredOrNot == false){ 
-                cout << "Status: " << "No Entregado" << endl << endl;}
-            else{
-                cout << "Status: " << "Entregado" << endl << endl;}
-            cout << endl;
+            cout << "CIF: " << students[i].cif << endl;
+            cout << "Nombre: " << students[i].fullname << endl;
+            cout << "Facultad: " << students[i].faculty << endl;
+            cout << "Carrera: " << students[i].major << endl;
+            cout << "email: " << students[i].email << endl;
+            cout << "Estado de Entrega: " << students[i].deliveredOrNot << endl;
+            cout << "Fecha de entrega: " << students[i].dateOfDelivery.day << "/" << students[i].dateOfDelivery.month << "/" << students[i].dateOfDelivery.year << endl;
         }
     } 
     break;
@@ -376,20 +316,16 @@ void majorSearcher() {
     cout << "Informacion estudiantil" << endl;
     cout << endl;
     for(int i = 0; i < 19; i++) {
-        string major = database[i].major;
+        string major = students[i].major;
         if(major.compare("MARKETING Y PUBLICIDAD") == 0) { /* Se utiliza para verificar si la cadena de caracteres contenida en la variable "major" es igual a "INGSIS" */
             // compare regresa numeros enteros y solo en caso que sea igual es que regresa el numero 0, es aqui el porque del == 0
-            cout << "CIF: " << database[i].cif << endl;
-            cout << "Nombre: " << database[i].name << endl;
-            cout << "Facultad: " << database[i].faculty << endl;
-            cout << "Carrera: " << database[i].major << endl;
-            cout << "email: " << database[i].email << endl;
-            if (database[i].deliveredOrNot == false){ 
-                cout << "Status: " << "No Entregado" << endl << endl;}
-            else{
-                cout << "Status: " << "Entregado" << endl << endl;}
-            cout << endl;
-        }
+            cout << "CIF: " << students[i].cif << endl;
+            cout << "Nombre: " << students[i].fullname << endl;
+            cout << "Facultad: " << students[i].faculty << endl;
+            cout << "Carrera: " << students[i].major << endl;
+            cout << "email: " << students[i].email << endl;
+            cout << "Estado de Entrega: " << students[i].deliveredOrNot << endl;
+            cout << "Fecha de entrega: " << students[i].dateOfDelivery.day << "/" << students[i].dateOfDelivery.month << "/" << students[i].dateOfDelivery.year << endl;
     } 
     break;
 
@@ -398,19 +334,16 @@ void majorSearcher() {
     cout << "Informacion estudiantil" << endl;
     cout << endl;
     for(int i = 0; i < 19; i++) {
-        string major = database[i].major;
+        string major = students[i].major;
         if(major.compare("DISENO Y COMUNICACION VISUAL") == 0) { /* Se utiliza para verificar si la cadena de caracteres contenida en la variable "major" es igual a "INGSIS" */
             // compare regresa numeros enteros y solo en caso que sea igual es que regresa el numero 0, es aqui el porque del == 0
-            cout << "CIF: " << database[i].cif << endl;
-            cout << "Nombre: " << database[i].name << endl;
-            cout << "Facultad: " << database[i].faculty << endl;
-            cout << "Carrera: " << database[i].major << endl;
-            cout << "email: " << database[i].email << endl;
-            if (database[i].deliveredOrNot == false){ 
-                cout << "Status: " << "No Entregado" << endl << endl;}
-            else{
-                cout << "Status: " << "Entregado" << endl << endl;}
-            cout << endl;
+            cout << "CIF: " << students[i].cif << endl;
+            cout << "Nombre: " << students[i].fullname << endl;
+            cout << "Facultad: " << students[i].faculty << endl;
+            cout << "Carrera: " << students[i].major << endl;
+            cout << "email: " << students[i].email << endl;
+            cout << "Estado de Entrega: " << students[i].deliveredOrNot << endl;
+            cout << "Fecha de entrega: " << students[i].dateOfDelivery.day << "/" << students[i].dateOfDelivery.month << "/" << students[i].dateOfDelivery.year << endl;
         }
     } 
     break;
@@ -420,19 +353,16 @@ void majorSearcher() {
     cout << "Informacion estudiantil" << endl;
     cout << endl;
     for(int i = 0; i < 19; i++) {
-        string major = database[i].major;
+        string major = students[i].major;
         if(major.compare("COMUNICACION Y RELACIONES PUBLICAS") == 0) { /* Se utiliza para verificar si la cadena de caracteres contenida en la variable "major" es igual a "INGSIS" */
             // compare regresa numeros enteros y solo en caso que sea igual es que regresa el numero 0, es aqui el porque del == 0
-            cout << "CIF: " << database[i].cif << endl;
-            cout << "Nombre: " << database[i].name << endl;
-            cout << "Facultad: " << database[i].faculty << endl;
-            cout << "Carrera: " << database[i].major << endl;
-            cout << "email: " << database[i].email << endl;
-            if (database[i].deliveredOrNot == false){ 
-                cout << "Status: " << "No Entregado" << endl << endl;}
-            else{
-                cout << "Status: " << "Entregado" << endl << endl;}
-            cout << endl;
+            cout << "CIF: " << students[i].cif << endl;
+            cout << "Nombre: " << students[i].fullname << endl;
+            cout << "Facultad: " << students[i].faculty << endl;
+            cout << "Carrera: " << students[i].major << endl;
+            cout << "email: " << students[i].email << endl;
+            cout << "Estado de Entrega: " << students[i].deliveredOrNot << endl;
+            cout << "Fecha de entrega: " << students[i].dateOfDelivery.day << "/" << students[i].dateOfDelivery.month << "/" << students[i].dateOfDelivery.year << endl;
         }
     } 
     break;
@@ -442,19 +372,16 @@ void majorSearcher() {
     cout << "Informacion estudiantil" << endl;
     cout << endl; // Puse 100 por poner un valor, agregue a unos amigos de admin y queria probar, necesita cambio
     for(int i = 0; i < 19; i++) {
-        string major = database[i].major;
+        string major = students[i].major;
         if(major.compare("ADMINISTRACION DE EMPRESAS") == 0) { /* Se utiliza para verificar si la cadena de caracteres contenida en la variable "major" es igual a "INGSIS" */
             // compare regresa numeros enteros y solo en caso que sea igual es que regresa el numero 0, es aqui el porque del == 0
-            cout << "CIF: " << database[i].cif << endl;
-            cout << "Nombre: " << database[i].name << endl;
-            cout << "Facultad: " << database[i].faculty << endl;
-            cout << "Carrera: " << database[i].major << endl;
-            cout << "email: " << database[i].email << endl;
-            if (database[i].deliveredOrNot == false){ 
-                cout << "Status: " << "No Entregado" << endl << endl;}
-            else{
-                cout << "Status: " << "Entregado" << endl << endl;}
-            cout << endl;
+            cout << "CIF: " << students[i].cif << endl;
+            cout << "Nombre: " << students[i].fullname << endl;
+            cout << "Facultad: " << students[i].faculty << endl;
+            cout << "Carrera: " << students[i].major << endl;
+            cout << "email: " << students[i].email << endl;
+            cout << "Estado de Entrega: " << students[i].deliveredOrNot << endl;
+            cout << "Fecha de entrega: " << students[i].dateOfDelivery.day << "/" << students[i].dateOfDelivery.month << "/" << students[i].dateOfDelivery.year << endl;
         }
     } 
     break;
@@ -464,19 +391,16 @@ void majorSearcher() {
     cout << "Informacion estudiantil" << endl;
     cout << endl;
     for(int i = 0; i < 19; i++) {
-        string major = database[i].major;
+        string major = students[i].major;
         if(major.compare("NEGOCIOS INTERNACIONALES") == 0) { /* Se utiliza para verificar si la cadena de caracteres contenida en la variable "major" es igual a "INGSIS" */
             // compare regresa numeros enteros y solo en caso que sea igual es que regresa el numero 0, es aqui el porque del == 0
-            cout << "CIF: " << database[i].cif << endl;
-            cout << "Nombre: " << database[i].name << endl;
-            cout << "Facultad: " << database[i].faculty << endl;
-            cout << "Carrera: " << database[i].major << endl;
-            cout << "email: " << database[i].email << endl;
-            if (database[i].deliveredOrNot == false){ 
-                cout << "Status: " << "No Entregado" << endl << endl;}
-            else{
-                cout << "Status: " << "Entregado" << endl << endl;}
-            cout << endl;
+            cout << "CIF: " << students[i].cif << endl;
+            cout << "Nombre: " << students[i].fullname << endl;
+            cout << "Facultad: " << students[i].faculty << endl;
+            cout << "Carrera: " << students[i].major << endl;
+            cout << "email: " << students[i].email << endl;
+            cout << "Estado de Entrega: " << students[i].deliveredOrNot << endl;
+            cout << "Fecha de entrega: " << students[i].dateOfDelivery.day << "/" << students[i].dateOfDelivery.month << "/" << students[i].dateOfDelivery.year << endl;
         }
     } 
     break;
@@ -486,19 +410,16 @@ void majorSearcher() {
     cout << "Informacion estudiantil" << endl;
     cout << endl;
     for(int i = 0; i < 19; i++) {
-        string major = database[i].major;
+        string major = students[i].major;
         if(major.compare("ECONOMIA EMPRESARIAL") == 0) { /* Se utiliza para verificar si la cadena de caracteres contenida en la variable "major" es igual a "INGSIS" */
             // compare regresa numeros enteros y solo en caso que sea igual es que regresa el numero 0, es aqui el porque del == 0
-            cout << "CIF: " << database[i].cif << endl;
-            cout << "Nombre: " << database[i].name << endl;
-            cout << "Facultad: " << database[i].faculty << endl;
-            cout << "Carrera: " << database[i].major << endl;
-            cout << "email: " << database[i].email << endl;
-            if (database[i].deliveredOrNot == false){ 
-                cout << "Status: " << "No Entregado" << endl << endl;}
-            else{
-                cout << "Status: " << "Entregado" << endl << endl;}
-            cout << endl;
+            cout << "CIF: " << students[i].cif << endl;
+            cout << "Nombre: " << students[i].fullname << endl;
+            cout << "Facultad: " << students[i].faculty << endl;
+            cout << "Carrera: " << students[i].major << endl;
+            cout << "email: " << students[i].email << endl;
+            cout << "Estado de Entrega: " << students[i].deliveredOrNot << endl;
+            cout << "Fecha de entrega: " << students[i].dateOfDelivery.day << "/" << students[i].dateOfDelivery.month << "/" << students[i].dateOfDelivery.year << endl;
         }
     } 
     break;
@@ -508,19 +429,16 @@ void majorSearcher() {
     cout << "Informacion estudiantil" << endl;
     cout << endl;
     for(int i = 0; i < 19; i++) {
-        string major = database[i].major;
+        string major = students[i].major;
         if(major.compare("CONTABILIDAD Y FINANZAS") == 0) { /* Se utiliza para verificar si la cadena de caracteres contenida en la variable "major" es igual a "INGSIS" */
             // compare regresa numeros enteros y solo en caso que sea igual es que regresa el numero 0, es aqui el porque del == 0
-            cout << "CIF: " << database[i].cif << endl;
-            cout << "Nombre: " << database[i].name << endl;
-            cout << "Facultad: " << database[i].faculty << endl;
-            cout << "Carrera: " << database[i].major << endl;
-            cout << "email: " << database[i].email << endl;
-            if (database[i].deliveredOrNot == false){ 
-                cout << "Status: " << "No Entregado" << endl << endl;}
-            else{
-                cout << "Status: " << "Entregado" << endl << endl;}
-            cout << endl;
+            cout << "CIF: " << students[i].cif << endl;
+            cout << "Nombre: " << students[i].fullname << endl;
+            cout << "Facultad: " << students[i].faculty << endl;
+            cout << "Carrera: " << students[i].major << endl;
+            cout << "email: " << students[i].email << endl;
+            cout << "Estado de Entrega: " << students[i].deliveredOrNot << endl;
+            cout << "Fecha de entrega: " << students[i].dateOfDelivery.day << "/" << students[i].dateOfDelivery.month << "/" << students[i].dateOfDelivery.year << endl;
         }
     } 
     break;
@@ -530,19 +448,16 @@ void majorSearcher() {
     cout << "Informacion estudiantil" << endl;
     cout << endl;
     for(int i = 0; i < 19; i++) {
-        string major = database[i].major;
+        string major = students[i].major;
         if(major.compare("INGENIERIA INDUSTRIAL") == 0) { /* Se utiliza para verificar si la cadena de caracteres contenida en la variable "major" es igual a "INGSIS" */
             // compare regresa numeros enteros y solo en caso que sea igual es que regresa el numero 0, es aqui el porque del == 0
-            cout << "CIF: " << database[i].cif << endl;
-            cout << "Nombre: " << database[i].name << endl;
-            cout << "Facultad: " << database[i].faculty << endl;
-            cout << "Carrera: " << database[i].major << endl;
-            cout << "email: " << database[i].email << endl;
-            if (database[i].deliveredOrNot == false){ 
-                cout << "Status: " << "No Entregado" << endl << endl;}
-            else{
-                cout << "Status: " << "Entregado" << endl << endl;}
-            cout << endl;
+            cout << "CIF: " << students[i].cif << endl;
+            cout << "Nombre: " << students[i].fullname << endl;
+            cout << "Facultad: " << students[i].faculty << endl;
+            cout << "Carrera: " << students[i].major << endl;
+            cout << "email: " << students[i].email << endl;
+            cout << "Estado de Entrega: " << students[i].deliveredOrNot << endl;
+            cout << "Fecha de entrega: " << students[i].dateOfDelivery.day << "/" << students[i].dateOfDelivery.month << "/" << students[i].dateOfDelivery.year << endl;
         }
     } 
     break;
@@ -552,19 +467,16 @@ void majorSearcher() {
     cout << "Informacion estudiantil" << endl;
     cout << endl;
     for(int i = 0; i < 19; i++) {
-        string major = database[i].major;
+        string major = students[i].major;
         if(major.compare("INGENIERIA CIVIL") == 0) { /* Se utiliza para verificar si la cadena de caracteres contenida en la variable "major" es igual a "INGSIS" */
             // compare regresa numeros enteros y solo en caso que sea igual es que regresa el numero 0, es aqui el porque del == 0
-            cout << "CIF: " << database[i].cif << endl;
-            cout << "Nombre: " << database[i].name << endl;
-            cout << "Facultad: " << database[i].faculty << endl;
-            cout << "Carrera: " << database[i].major << endl;
-            cout << "email: " << database[i].email << endl;
-            if (database[i].deliveredOrNot == false){ 
-                cout << "Status: " << "No Entregado" << endl << endl;}
-            else{
-                cout << "Status: " << "Entregado" << endl << endl;}
-            cout << endl;
+            cout << "CIF: " << students[i].cif << endl;
+            cout << "Nombre: " << students[i].fullname << endl;
+            cout << "Facultad: " << students[i].faculty << endl;
+            cout << "Carrera: " << students[i].major << endl;
+            cout << "email: " << students[i].email << endl;
+            cout << "Estado de Entrega: " << students[i].deliveredOrNot << endl;
+            cout << "Fecha de entrega: " << students[i].dateOfDelivery.day << "/" << students[i].dateOfDelivery.month << "/" << students[i].dateOfDelivery.year << endl;
         }
     } 
     break;
@@ -574,19 +486,16 @@ void majorSearcher() {
     cout << "Informacion estudiantil" << endl;
     cout << endl;
     for(int i = 0; i < 19; i++) {
-        string major = database[i].major;
+        string major = students[i].major;
         if(major.compare("INGENIERIA EN SISTEMAS DE INFORMACION") == 0) { /* Se utiliza para verificar si la cadena de caracteres contenida en la variable "major" es igual a "INGSIS" */
             // compare regresa numeros enteros y solo en caso que sea igual es que regresa el numero 0, es aqui el porque del == 0
-            cout << "CIF: " << database[i].cif << endl;
-            cout << "Nombre: " << database[i].name << endl;
-            cout << "Facultad: " << database[i].faculty << endl;
-            cout << "Carrera: " << database[i].major << endl;
-            cout << "email: " << database[i].email << endl;
-            if (database[i].deliveredOrNot == false){ 
-                cout << "Status: " << "No Entregado" << endl << endl;}
-            else{
-                cout << "Status: " << "Entregado" << endl << endl;}
-            cout << endl;
+            cout << "CIF: " << students[i].cif << endl;
+            cout << "Nombre: " << students[i].fullname << endl;
+            cout << "Facultad: " << students[i].faculty << endl;
+            cout << "Carrera: " << students[i].major << endl;
+            cout << "email: " << students[i].email << endl;
+            cout << "Estado de Entrega: " << students[i].deliveredOrNot << endl;
+            cout << "Fecha de entrega: " << students[i].dateOfDelivery.day << "/" << students[i].dateOfDelivery.month << "/" << students[i].dateOfDelivery.year << endl;
         }
     } 
         break;
@@ -596,19 +505,16 @@ void majorSearcher() {
     cout << "Informacion estudiantil" << endl;
     cout << endl;
     for(int i = 0; i < 19; i++) {
-        string major = database[i].major;
+        string major = students[i].major;
         if(major.compare("ARQUITECTURA") == 0) { /* Se utiliza para verificar si la cadena de caracteres contenida en la variable "major" es igual a "INGSIS" */
             // compare regresa numeros enteros y solo en caso que sea igual es que regresa el numero 0, es aqui el porque del == 0
-            cout << "CIF: " << database[i].cif << endl;
-            cout << "Nombre: " << database[i].name << endl;
-            cout << "Facultad: " << database[i].faculty << endl;
-            cout << "Carrera: " << database[i].major << endl;
-            cout << "email: " << database[i].email << endl;
-            if (database[i].deliveredOrNot == false){ 
-                cout << "Status: " << "No Entregado" << endl << endl;}
-            else{
-                cout << "Status: " << "Entregado" << endl << endl;}
-            cout << endl;
+            cout << "CIF: " << students[i].cif << endl;
+            cout << "Nombre: " << students[i].fullname << endl;
+            cout << "Facultad: " << students[i].faculty << endl;
+            cout << "Carrera: " << students[i].major << endl;
+            cout << "email: " << students[i].email << endl;
+            cout << "Estado de Entrega: " << students[i].deliveredOrNot << endl;
+            cout << "Fecha de entrega: " << students[i].dateOfDelivery.day << "/" << students[i].dateOfDelivery.month << "/" << students[i].dateOfDelivery.year << endl;
         }
     } 
         break;
@@ -620,20 +526,22 @@ void majorSearcher() {
         break;
     }
 }
+}
 
 void deliveredShow(){
     cout << endl;
     cout << "Informacion estudiantil" << endl;
     cout << endl;
-    for(int i = 0; i < 19; i++){
-        if(database[i].deliveredOrNot == true){
-            cout << "CIF: " << database[i].cif << endl;
-            cout << "Nombre: " <<database[i].name << endl;
-            cout << "Facultad: " <<database[i].faculty << endl;
-            cout << "Carrera: " <<database[i].major << endl;
-            cout << "email: " <<database[i].email << endl;
-            cout << "Status: Entregado" << endl;
-            cout << endl;
+    for(int i = 0; i < MAX; i++){
+        string deliveredSearcher = students[i].deliveredOrNot;
+        if(deliveredSearcher.compare("ENTREGADO") == 0){
+        cout << "CIF: " << students[i].cif << endl;
+        cout << "Nombre: " << students[i].fullname << endl;
+        cout << "Facultad: " << students[i].faculty << endl;
+        cout << "Carrera: " << students[i].major << endl;
+        cout << "email: " << students[i].email << endl;
+        cout << "Estado de Entrega: " << students[i].deliveredOrNot << endl;
+        cout << "Fecha de entrega: " << students[i].dateOfDelivery.day << "/" << students[i].dateOfDelivery.month << "/" << students[i].dateOfDelivery.year << endl;
         }
     }
 }
@@ -642,15 +550,15 @@ void notDeliveredShow(){
     cout << endl;
     cout << "Informacion estudiantil" << endl;
     cout << endl;
-    for(int i = 0; i < 19; i++){
-        if(database[i].deliveredOrNot == false){
-            cout << "CIF: " << database[i].cif << endl;
-            cout << "Nombre: " <<database[i].name << endl;
-            cout << "Facultad: " <<database[i].faculty << endl;
-            cout << "Carrera: " <<database[i].major << endl;
-            cout << "email: " <<database[i].email << endl;
-            cout << "Status: No Entregado" << endl;
-            cout << endl;
-        }
+    for(int i = 0; i < MAX; i++){
+        string deliveredSearcher = students[i].deliveredOrNot;
+        if(deliveredSearcher.compare("NO ENTREGADO") == 0){
+        cout << "CIF: " << students[i].cif << endl;
+        cout << "Nombre: " << students[i].fullname << endl;
+        cout << "Facultad: " << students[i].faculty << endl;
+        cout << "Carrera: " << students[i].major << endl;
+        cout << "email: " << students[i].email << endl;
+        cout << "Estado de Entrega: " << students[i].deliveredOrNot << endl;
     }
+}
 }

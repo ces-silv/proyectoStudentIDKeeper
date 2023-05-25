@@ -2,29 +2,13 @@
 #include <stdio.h>
 #include <string.h>
 #include "gotoxy.h"
-#define MAX 100
+#include "struct.h"
+#include "searcherFunctions.cpp"
 using namespace std;
 
-typedef struct{
-    int day;
-    int month;
-    int year;
-} date;
-typedef struct{
-    char cif[10];
-    char fullname[100];
-    char faculty[100];
-    char major[100];
-    char email[30];
-    char deliveredOrNot[15];
-    date dateOfDelivery;
-} studentsUAM;
-
-studentsUAM students[MAX];
 int lastReg = 0;
 
 //Crud
-
 // Create
 void addStudent(studentsUAM st);
 /*Read*/
@@ -89,7 +73,7 @@ void showStudents()
     system("cls||clear");
     if (lastReg == 0)
     {
-        cout << "No hay registros\n";
+        cout << "No hay registros" << endl;
         return;
     }
     for (int i = 0; i < lastReg; i++)
@@ -170,27 +154,79 @@ void start(){
         cout << "Escribe el CIF del estudiante: " << endl;
         scanf(" %[^\n]", cif);
         pos = isStudent(cif);
-        if(pos == -1){
+        if(pos == 0){
             cout << "No se encontro el registro" << endl;
+            system("pause || read -p 'Presiona Enter para continuar...' -n 1 -s");
+            system("clear || cls");
+            start();
+
         } else{
             system("clear || cls ");
-            showStudent(pos);}
+            cifSearcher();}
             return;
         break;
     
     case 2:
+        system("clear || cls");
+        cout << "Escribe el nombre del estudiante: " << endl;
+        scanf(" %[^\n]", st.fullname);
+        pos = isStudent(st.fullname);
+        if(pos == 0){
+            cout << "No se encontro el registro" << endl;
+            system("pause || read -p 'Presiona Enter para continuar...' -n 1 -s");
+            system("clear || cls");
+            start();
+
+        } else{
+            system("clear || cls ");
+            nameSearcher();}
+            return;
         break;
     
     case 3:
+        system("clear || cls");
+        cout << "Escribe la facultad del estudiante: " << endl;
+        scanf(" %[^\n]", st.faculty);
+        pos = isStudent(st.faculty);
+        if(pos == 0){
+            cout << "No se encontro el registro" << endl;
+            system("pause || read -p 'Presiona Enter para continuar...' -n 1 -s");
+            system("clear || cls");
+            start();
+
+        } else{
+            system("clear || cls ");
+            facultySearcher();}
+            return;
         break;
     
     case 4:
+        system("clear || cls");
+        cout << "Escribe la carrera del estudiante: " << endl;
+        scanf(" %[^\n]", st.major);
+        pos = isStudent(st.major);
+        if(pos == 0){
+            cout << "No se encontro el registro" << endl;
+            system("pause || read -p 'Presiona Enter para continuar...' -n 1 -s");
+            system("clear || cls");
+            start();
+
+        } else{
+            system("clear || cls ");
+            majorSearcher();}
+            return;
         break;
     
     case 5:
+        system("clear || cls");
+        cout << "Estudiantes con carnets ENTREGADOS: " << endl;
+        deliveredShow();
         break;
     
     case 6:
+        system("clear || cls");
+        cout << "Estudiantes con carnets NO ENTREGADOS: " << endl;
+        notDeliveredShow();
         break;
 
     case 7:
@@ -275,13 +311,22 @@ void actions(){
                 gotoxy(39,11);
                 scanf("%d/%d/%d", &st.dateOfDelivery.day, &st.dateOfDelivery.month, &st.dateOfDelivery.year);
                 addStudent(st);
-                system("pause");
+                system("pause || read -p 'Presiona Enter para continuar...' -n 1 -s");
             break;
             
             case 2: 
                 system("clear || cls");
                 cout << "Escribe el CIF a buscar: ";
                 scanf(" %[^\n]", cif);
+                pos = isStudent(cif);
+                if(pos == 0){
+                    cout << "No se encontro el registro" << endl;
+                } else{
+                    system("clear || cls ");
+                    showStudent(pos);
+                    cout << "Desea editar este registro? (1. Si / 2. No): ";
+                    cin >> resp;
+                    if(resp == 1){
                 system("clear || cls");
                 cout << "===== DATOS ACTUALES =====";
                 gotoxy(0,2);
@@ -320,14 +365,20 @@ void actions(){
                 updateStudent(st, pos);
                 gotoxy(40,21);
                 cout << "Registro actualizado...\n";
-                system("pause");
+                }
+                else{
+                    cout << "Operacion cancelada...\n";
+                }
+                }
+                system("pause || read -p 'Presiona Enter para continuar...' -n 1 -s");
             break;
 
             case 3: 
                 system("clear || cls");
                 if (lastReg == 0)
                 {
-                    cout << "No hay nada que eliminar\n";
+                    cout << "No hay nada que eliminar" << endl;
+                    system("pause || read -p 'Presiona Enter para continuar...' -n 1 -s");
                     break;
                 }
                 cout << "Escribe el CIF del estudiante: ";
@@ -348,13 +399,13 @@ void actions(){
                     cout << endl;
                     cout << "Operacion cancelada.... \n";
                 }
-                system("pause");
+                system("pause || read -p 'Presiona Enter para continuar...' -n 1 -s");
             break;
 
             case 4:
                 system("clear||cls");
                 showStudents();
-                system("pause");
+                system("pause || read -p 'Presiona Enter para continuar...' -n 1 -s");
             break;
 
             case 5:
@@ -368,7 +419,7 @@ void actions(){
 
             default:
                 cout << "Opcion no valida" << endl;
-                system("pause");
+                system("pause || read -p 'Presiona Enter para continuar...' -n 1 -s");
             break;
         }
     }
