@@ -1,8 +1,8 @@
 #include <iostream>
 #include <string>
 #include <limits>
- /*límites de los diferentes tipos de datos, como el número máximo 
- y mínimo que se puede almacenar en un tipo de dato específico.*/
+/*límites de los diferentes tipos de datos, como el número máximo 
+y mínimo que se puede almacenar en un tipo de dato específico.*/
 #include <cstdlib>
 /*funcionalidades generales de la biblioteca estándar de C. 
 Incluye funciones como system() para ejecutar comandos del sistema operativo 
