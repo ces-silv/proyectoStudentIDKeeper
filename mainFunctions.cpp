@@ -1,7 +1,6 @@
 #include <iostream>
 #include <stdio.h>
 #include <string.h>
-#include <stdbool.h>
 #include "gotoxy.h"
 #define MAX 100
 using namespace std;
@@ -17,7 +16,7 @@ typedef struct{
     char faculty[100];
     char major[100];
     char email[30];
-    char deliveredOrNot[10];
+    char deliveredOrNot[15];
     date dateOfDelivery;
 } studentsUAM;
 
@@ -98,6 +97,7 @@ void showStudents()
         cout << "========================\n";
         showStudent(i);
     }
+    cout << endl;
     cout << "Ultimo registro...\n";
 }
 
@@ -137,25 +137,28 @@ void start(){
     studentsUAM st;
     readStudents();
     
+
     gotoxy(10, 5);
-    cout << "SELECCIONE UN FILTRO DE BUSQUEDA: " << endl;
+    cout << " UNIVERSIDAD AMERICANA - UAM" << endl;
     gotoxy(10, 7);
-    cout << "1. Por CIF" << endl;
-    gotoxy(10, 8);
-    cout << "2. Por Nombre" << endl;
+    cout << " SELECCIONE UN FILTRO DE BUSQUEDA: " << endl;
     gotoxy(10, 9);
-    cout << "3. Por Facultad" << endl;
+    cout << " 1. Por CIF" << endl;
     gotoxy(10, 10);
-    cout << "4. Por Carrera" << endl;
+    cout << " 2. Por Nombre" << endl;
     gotoxy(10, 11);
-    cout << "5. Mostrar a los estudiantes con carnets ENTREGADOS" << endl;
+    cout << " 3. Por Facultad" << endl;
     gotoxy(10, 12);
-    cout << "6. Mostrar a los estudiantes con carnets NO ENTREGADOS" << endl;
+    cout << " 4. Por Carrera" << endl;
     gotoxy(10, 13);
-    cout << "8. Ir al Menu de Registros" << endl;
-    gotoxy(10, 14);    
-    cout << "9. Salir" << endl;
-    gotoxy(13, 16);
+    cout << " 5. Mostrar a los estudiantes con carnets ENTREGADOS" << endl;
+    gotoxy(10, 14);
+    cout << " 6. Mostrar a los estudiantes con carnets NO ENTREGADOS" << endl;
+    gotoxy(10, 15);
+    cout << " 7. Ir al Menu de Acciones" << endl;
+    gotoxy(10, 16);    
+    cout << " 8. Salir" << endl;
+    gotoxy(13, 18);
     cout << "---> ";
     cin >> selectMenu;
     cin.ignore();
@@ -189,16 +192,13 @@ void start(){
     
     case 6:
         break;
-    
-    case 7:
-        break;
 
-    case 8:
+    case 7:
         system("clear || cls");
         actions();
         break;
     
-    case 9:
+    case 8:
         cout << "Saliendo del programa..." << endl;
         break;
 
@@ -257,7 +257,7 @@ void actions(){
                 gotoxy(10, 9);
                 cout << "Email: ";
                 gotoxy(10, 10);
-                cout << "Estado de entrega (True o False): ";
+                cout << "Estado de entrega: ";
                 gotoxy(10,11);
                 cout << "Fecha de entrega dd/mm/yyyy: ";
                 gotoxy(15, 5);
@@ -270,9 +270,9 @@ void actions(){
                 scanf(" %[^\n]", st.major);
                 gotoxy(17, 9);
                 scanf(" %[^\n]", st.email);
-                gotoxy(44, 10);
+                gotoxy(29, 10);
                 scanf(" %[^\n]", st.deliveredOrNot);
-                gotoxy(40,11);
+                gotoxy(39,11);
                 scanf("%d/%d/%d", &st.dateOfDelivery.day, &st.dateOfDelivery.month, &st.dateOfDelivery.year);
                 addStudent(st);
                 system("pause");
@@ -283,42 +283,42 @@ void actions(){
                 cout << "Escribe el CIF a buscar: ";
                 scanf(" %[^\n]", cif);
                 system("clear || cls");
-                cout << "DATOS ACTUALES";
+                cout << "===== DATOS ACTUALES =====";
                 gotoxy(0,2);
                 pos = isStudent(cif);
                 showStudent(pos);
-                gotoxy(0,10);
-                cout << "DATOS A EDITAR" << endl;
-                gotoxy(0,12);
-                cout << "CIF:";
+                gotoxy(0,11);
+                cout << "===== DATOS A EDITAR =====" << endl;
                 gotoxy(0,13);
-                cout << "Nombre Completo: ";
+                cout << "CIF:";
                 gotoxy(0,14);
-                cout << "Facultad: ";
+                cout << "Nombre Completo: ";
                 gotoxy(0,15);
-                cout << "Carrera: ";
+                cout << "Facultad: ";
                 gotoxy(0,16);
-                cout << "Email: ";
+                cout << "Carrera: ";
                 gotoxy(0,17);
-                cout << "Estado de entrega: ";
+                cout << "Email: ";
                 gotoxy(0,18);
-                cout << "Fecha de entrega dd/mm/yyyy: ";
-                gotoxy(5,12);
+                cout << "Estado de entrega: ";
+                gotoxy(0,19);
+                cout << "Fecha de entrega: ";
+                gotoxy(5,13);
                 scanf(" %[^\n]", st.cif);
-                gotoxy(17,13);
+                gotoxy(17,14);
                 scanf(" %[^\n]", st.fullname);
-                gotoxy(10,14);
+                gotoxy(10,15);
                 scanf(" %[^\n]", st.faculty);
-                gotoxy(9,15);
+                gotoxy(9,16);
                 scanf(" %[^\n]", st.major);
-                gotoxy(7,16);
+                gotoxy(7,17);
                 scanf(" %[^\n]", st.email);
-                gotoxy(19,17);
+                gotoxy(19,18);
                 scanf(" %[^\n]", st.deliveredOrNot);
-                gotoxy(15,18);
+                gotoxy(18,19);
                 scanf("%d/%d/%d", &st.dateOfDelivery.day, &st.dateOfDelivery.month, &st.dateOfDelivery.year);
                 updateStudent(st, pos);
-                gotoxy(40,9);
+                gotoxy(40,21);
                 cout << "Registro actualizado...\n";
                 system("pause");
             break;
@@ -330,19 +330,22 @@ void actions(){
                     cout << "No hay nada que eliminar\n";
                     break;
                 }
-                cout << "Escribe el CIF del studentsUAM: ";
+                cout << "Escribe el CIF del estudiante: ";
                 cin >> cif;
                 pos = isStudent(cif);
                 st = getStudent(pos);
+                cout << endl;
                 cout << "¿Realmente deseas eliminar el estudiante llamado: " << st.fullname << "?\n";
                 cout << "Escribe 1 para SI o 2 para NO: ";
                 cin >> resp;
                 if (resp == 1)
                 {
                 deleteStudent(pos);
+                cout << endl;
                 cout << "Registro Eliminado... \n";
                 }
                 else{
+                    cout << endl;
                     cout << "Operacion cancelada.... \n";
                 }
                 system("pause");
