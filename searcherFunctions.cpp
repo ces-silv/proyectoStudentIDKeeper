@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string.h>
 #include "struct.h"
-#include "mainFunctions.cpp"
 using namespace std;
 
 //Prototipo de funciones
@@ -262,7 +261,7 @@ void majorSearcher() {
         string major = students[i].major;
         if(major.compare("MEDICINA") == 0) { /* Se utiliza para verificar si la cadena de caracteres contenida en la variable "major" es igual a "INGSIS" */
             // compare regresa numeros enteros y solo en caso que sea igual es que regresa el numero 0, es aqui el porque del == 0
-            out << "CIF: " << students[i].cif << endl;
+            cout << "CIF: " << students[i].cif << endl;
             cout << "Nombre: " << students[i].fullname << endl;
             cout << "Facultad: " << students[i].faculty << endl;
             cout << "Carrera: " << students[i].major << endl;
