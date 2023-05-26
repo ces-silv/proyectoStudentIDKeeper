@@ -12,7 +12,7 @@ int lastReg = 0;
 void addStudent(studentsUAM st);
 /*Read*/
 void showStudent(int pos);
-int isStudent(char id[]);
+int isStudent(char CIF[]);
 void showStudents();
 void startStudent(int pos);
 studentsUAM getStudent(int pos);
@@ -23,8 +23,7 @@ void deleteStudent(int pos);
 
 /*Menu*/
 void start();
-int actionMenu();
-void actions();
+int mainMenu();
 
 /*Archivos
 */
@@ -114,148 +113,115 @@ void startStudent(int pos){
     students[pos].dateOfDelivery.year = 0;
 }
 
-void start(){
-    int pos, selectMenu;
-    char cif[8];
-    studentsUAM st;
-    readStudents();
-    
 
-    gotoxy(10, 5);
-    cout << " UNIVERSIDAD AMERICANA - UAM" << endl;
-    gotoxy(10, 7);
-    cout << " SELECCIONE UN FILTRO DE BUSQUEDA: " << endl;
-    gotoxy(10, 9);
-    cout << " 1. Por CIF" << endl;
-    gotoxy(10, 10);
-    cout << " 2. Por Nombre" << endl;
-    gotoxy(10, 11);
-    cout << " 3. Por Facultad" << endl;
-    gotoxy(10, 12);
-    cout << " 4. Por Carrera" << endl;
-    gotoxy(10, 13);
-    cout << " 5. Mostrar a los estudiantes con carnets ENTREGADOS" << endl;
-    gotoxy(10, 14);
-    cout << " 6. Mostrar a los estudiantes con carnets NO ENTREGADOS" << endl;
-    gotoxy(10, 15);
-    cout << " 7. Ir al Menu de Acciones" << endl;
-    gotoxy(10, 16);    
-    cout << " 8. Salir" << endl;
-    gotoxy(13, 18);
-    cout << "---> ";
-    cin >> selectMenu;
-    cin.ignore();
-
-    switch (selectMenu)
-    {
-    case 1:
-        system("clear || cls");
-        cout << "Escribe el CIF del estudiante: " << endl;
-        scanf(" %[^\n]", cif);
-        pos = isStudent(cif);
-        if(pos == 0){
-            cout << "No se encontro el registro" << endl;
-            system("pause || read -p 'Presiona Enter para continuar...' -n 1 -s");
-            system("clear || cls");
-            start();
-
-        } else{
-            system("clear || cls ");
-            cifSearcher();}
-            return;
-        break;
-    
-    case 2:
-        system("clear || cls");
-        cout << "Escribe el nombre del estudiante: " << endl;
-        scanf(" %[^\n]", st.fullname);
-        pos = isStudent(st.fullname);
-        if(pos == 0){
-            cout << "No se encontro el registro" << endl;
-            system("pause || read -p 'Presiona Enter para continuar...' -n 1 -s");
-            system("clear || cls");
-            start();
-
-        } else{
-            system("clear || cls ");
-            nameSearcher();}
-            return;
-        break;
-    
-    case 3:
-            facultySearcher();
-            return;
-        break;
-    
-    case 4:
-            majorSearcher();
-            return;
-        break;
-    
-    case 5:
-        system("clear || cls");
-        cout << "Estudiantes con carnets ENTREGADOS: " << endl;
-        deliveredShow();
-        break;
-    
-    case 6:
-        system("clear || cls");
-        cout << "Estudiantes con carnets NO ENTREGADOS: " << endl;
-        notDeliveredShow();
-        break;
-
-    case 7:
-        system("clear || cls");
-        actions();
-        break;
-    
-    case 8:
-        cout << "Saliendo del programa..." << endl;
-        break;
-
-    default:
-        cout << "Opcion no valida" << endl;
-        break;
-    }
-
-}
-
-int actionMenu(){
-    int op;
+int mainMenu(){
+    int selectMenu;
         gotoxy(10, 5);
         cout << " UNIVERSIDAD AMERICANA - UAM" << endl;
         gotoxy(15, 6);
         cout << "Cantidad de registros: " << lastReg << endl;
-        gotoxy(10, 9);
-        cout << " 1. Agregar Estudiante" << endl;
+
+        gotoxy(10, 8);
+        cout << " SELECCIONE UN FILTRO DE BUSQUEDA: " << endl;
         gotoxy(10, 10);
-        cout << " 2. Editar Estudiante" << endl;
+        cout << " 1. Por CIF" << endl;
         gotoxy(10, 11);
-        cout << " 3. Eliminar Estudiante" << endl;
+        cout << " 2. Por Nombre" << endl;
         gotoxy(10, 12);
-        cout << " 4. Mostrar todos los Estudiantes" << endl;
+        cout << " 3. Por Facultad" << endl;
         gotoxy(10, 13);
-        cout << " 5. Regresar a los Filtros de Busqueda" << endl;
+        cout << " 4. Por Carrera" << endl;
         gotoxy(10, 14);
-        cout << " 6. Salir" << endl;
-        gotoxy(13, 16);
+        cout << " 5. Mostrar a los estudiantes con carnets ENTREGADOS" << endl;
+        gotoxy(10, 15);
+        cout << " 6. Mostrar a los estudiantes con carnets NO ENTREGADOS" << endl;
+
+        gotoxy(10, 17);
+        cout << " O SELECCIONE UNA ACCION: " << endl;
+        gotoxy(10, 19);
+        cout << " 7. Agregar Estudiante" << endl;
+        gotoxy(10, 20);
+        cout << " 8. Editar Estudiante" << endl;
+        gotoxy(10, 21);
+        cout << " 9. Eliminar Estudiante" << endl;
+        gotoxy(10, 22);
+        cout << " 10. Mostrar a todos los Estudiantes" << endl;
+        gotoxy(10, 23);
+        cout << " 11. Salir" << endl;
+        gotoxy(13, 24);
         cout << " ---> ";
-        cin >> op;
-    return op;
+        cin >> selectMenu;
+    return selectMenu;
 }
 
 
-void actions(){
-    int op, pos, resp;
+void start(){
+    int selectMenu, pos, resp;
     char cif[8];
     studentsUAM st;
     readStudents();
 
     do{
         system("clear||cls");
-        op = actionMenu();
-        switch(op){
-            case 1: 
+        selectMenu = mainMenu();
+        switch(selectMenu){
+            case 1:
+                system("clear || cls");
+                cout << "Escribe el CIF del estudiante: " << endl;
+                scanf(" %[^\n]", cif);
+                pos = isStudent(cif);
+                if(pos == 0){
+                    cout << "No se encontro el registro" << endl;
+                    system("pause || read -p 'Presiona Enter para continuar...' -n 1 -s");
+                    system("clear || cls");
+                    start();
+
+                } else{
+                    system("clear || cls ");
+                    cifSearcher();}
+                    return;
+                break;
+            
+            case 2:
+                system("clear || cls");
+                cout << "Escribe el nombre del estudiante: " << endl;
+                scanf(" %[^\n]", st.fullname);
+                pos = isStudent(st.fullname);
+                if(pos == 0){
+                    cout << "No se encontro el registro" << endl;
+                    system("pause || read -p 'Presiona Enter para continuar...' -n 1 -s");
+                    system("clear || cls");
+                    start();
+
+                } else{
+                    system("clear || cls ");
+                    nameSearcher();}
+                    return;
+                break;
+            
+            case 3:
+                    facultySearcher();
+                    return;
+                break;
+            
+            case 4:
+                    majorSearcher();
+                    return;
+                break;
+            
+            case 5:
+                system("clear || cls");
+                cout << "Estudiantes con carnets ENTREGADOS: " << endl;
+                deliveredShow();
+                break;
+            
+            case 6:
+                system("clear || cls");
+                cout << "Estudiantes con carnets NO ENTREGADOS: " << endl;
+                notDeliveredShow();
+                break;
+                
+            case 7: 
                 system("clear||cls");
                 gotoxy(10, 5);
                 cout << "CIF:";
@@ -289,7 +255,7 @@ void actions(){
                 system("pause || read -p 'Presiona Enter para continuar...' -n 1 -s");
             break;
             
-            case 2: 
+            case 8: 
                 system("clear || cls");
                 cout << "Escribe el CIF a buscar: ";
                 scanf(" %[^\n]", cif);
@@ -348,7 +314,7 @@ void actions(){
                 system("pause || read -p 'Presiona Enter para continuar...' -n 1 -s");
             break;
 
-            case 3: 
+            case 9: 
                 system("clear || cls");
                 if (lastReg == 0)
                 {
@@ -377,18 +343,13 @@ void actions(){
                 system("pause || read -p 'Presiona Enter para continuar...' -n 1 -s");
             break;
 
-            case 4:
+            case 10:
                 system("clear||cls");
                 showStudents();
                 system("pause || read -p 'Presiona Enter para continuar...' -n 1 -s");
             break;
 
-            case 5:
-                system("clear || cls");
-                start();
-            break;
-
-            case 6:
+            case 11:
                 cout << "Saliendo del programa..." << endl;
             break;
 
@@ -398,7 +359,7 @@ void actions(){
             break;
         }
     }
-    while (op != 6);
+    while (selectMenu != 11);
     {
         saveStudents();
     }
