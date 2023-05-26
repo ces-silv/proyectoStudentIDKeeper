@@ -21,6 +21,7 @@ void updateStudent(studentsUAM st, int pos);
 /*Delete*/
 void deleteStudent(int pos);
 
+void facultySearcher();
 void deliveredShow();
 void notDeliveredShow();
 
@@ -84,6 +85,139 @@ void showStudents()
     }
     cout << endl;
     cout << "Ultimo registro...\n";
+}
+
+void facultySearcher(){
+    int searchFaculty;
+    char nameFaculty[100];
+    cout << endl;
+    cout << "Selecciona la facultad a buscar:" << endl;
+    cout << "1. Facultad de Odontologia" << endl;
+    cout << "2. Facultad de Ciencias Medicas" << endl;
+    cout << "3. Facultad de Marketing, Diseño y Ciencias de la Comunicacion" << endl;
+    cout << "4. Facultad de Ciencias Administrativas y Economicas" << endl;
+    cout << "5. Facultad de Ingenieria y Arquitectura" << endl;
+    cout << "6. Facultad de Ciencias Juridicas, Humanidades y Relaciones Internacionales" << endl;
+    cout << endl;
+    cout << "---> "; cin >> searchFaculty;
+    cin.ignore();
+
+    switch (searchFaculty)
+    {
+    case 1: // FACULTAD DE ODONTOLOGIA
+        system("cls || clear");
+        strcpy(nameFaculty, "FACULTAD DE ODONTOLOGIA");
+        cout << "Informacion estudiantil" << endl;
+        cout << endl;
+        if (lastReg == 0)
+        {
+            cout << "No hay registros" << endl;
+            return;
+        }
+        for (int i = 0; i < lastReg; i++){
+            if(strcmp(nameFaculty, students[i].faculty) == 0){
+                cout << "========================\n";
+                showStudent(i);
+            }
+        }
+        break;
+
+    case 2: // FACULTAD DE CIENCIAS MEDICAS
+        system("cls || clear");
+        strcpy(nameFaculty, "FACULTAD DE CIENCIAS MEDICAS");
+        cout << "Informacion estudiantil" << endl;
+        cout << endl;
+        if (lastReg == 0)
+        {
+            cout << "No hay registros" << endl;
+            return;
+        }
+        for (int i = 0; i < lastReg; i++){
+            if(strcmp(nameFaculty, students[i].faculty) == 0){
+                cout << "========================\n";
+                showStudent(i);
+            }
+        }
+    break; 
+
+    case 3: // FACULTAD DE MARKETING, DISEÑO Y CIENCIAS DE LA COMUNICACION
+        system("cls || clear");
+        strcpy(nameFaculty, "FACULTAD DE MARKETING, DISEÑO Y CIENCIAS DE LA COMUNICACION");
+        cout << "Informacion estudiantil" << endl;
+        cout << endl;
+        if (lastReg == 0)
+        {
+            cout << "No hay registros" << endl;
+            return;
+        }
+        for (int i = 0; i < lastReg; i++){
+            if(strcmp(nameFaculty, students[i].faculty) == 0){
+                cout << "========================\n";
+                showStudent(i);
+            }
+        }
+        break;
+
+    case 4: // FACULTAD DE CIENCIAS ADMINISTRATIVAS Y ECONOMICAS
+        system("cls || clear");
+        strcpy(nameFaculty, "FACULTAD DE CIENCIAS ADMINISTRATIVAS Y ECONOMICAS");
+        cout << "Informacion estudiantil" << endl;
+        cout << endl;
+        if (lastReg == 0)
+        {
+            cout << "No hay registros" << endl;
+            return;
+        }
+        for (int i = 0; i < lastReg; i++){
+            if(strcmp(nameFaculty, students[i].faculty) == 0){
+                cout << "========================\n";
+                showStudent(i);
+            }
+        }
+        break;
+
+    case 5: //FACULTAD DE INGENIERIA Y ARQUITECTURA
+        system("cls || clear");
+        strcpy(nameFaculty, "FACULTAD DE INGENIERIA Y ARQUITECTURA");
+        cout << "Informacion estudiantil" << endl;
+        cout << endl;
+        if (lastReg == 0)
+        {
+            cout << "No hay registros" << endl;
+            return;
+        }
+        for (int i = 0; i < lastReg; i++){
+            if(strcmp(nameFaculty, students[i].faculty) == 0){
+                cout << "========================\n";
+                showStudent(i);
+            }
+        }
+        break;
+
+    case 6: //FACULTAD DE CIENCIAS JURIDICAS, HUMANIDADES Y RELACIONES INTERNACIONALES
+        system("cls || clear");
+        strcpy(nameFaculty, "FACULTAD DE CIENCIAS JURIDICAS, HUMANIDADES Y RELACIONES INTERNACIONALES");
+        cout << "Informacion estudiantil" << endl;
+        cout << endl;
+        if (lastReg == 0)
+        {
+            cout << "No hay registros" << endl;
+            return;
+        }
+        for (int i = 0; i < lastReg; i++){
+            if(strcmp(nameFaculty, students[i].faculty) == 0){
+                cout << "========================\n";
+                showStudent(i);
+            }
+        }
+        break;
+
+    default:
+        system("cls || clear");
+        cout << "OPCION NO PERMITIDA - VOLVIENDO AL MENU DE SELECION" << endl;
+        facultySearcher();
+        break;
+    }
 }
 
 void deliveredShow(){
