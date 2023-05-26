@@ -736,9 +736,9 @@ void start(){
                 gotoxy(10, 6);
                 cout << "Nombre Completo: ";
                 gotoxy(10, 7);
-                cout << "Facultad: ";
+                cout << "Facultad (INGRESAR NUMERO CORRESPONDIENTE) : ";
                 gotoxy(10, 8);
-                cout << "Carrera: ";
+                cout << "Carrera (INGRESAR NUMERO CORRESPONDIENTE) : ";
                 gotoxy(10, 9);
                 cout << "Email: ";
                 gotoxy(10, 10);
@@ -750,8 +750,23 @@ void start(){
                 gotoxy(27, 6);
                 scanf(" %[^\n]", st.fullname);
                 
-                gotoxy(20, 7);
                 int facultySelector;
+                gotoxy(100,5);
+                cout<<"MENU DE FILTROS - FACULTADES \n";
+                gotoxy(100,6);
+                cout<<"1 - FACULTAD DE ODONTOLOGIA \n";
+                gotoxy(100,7);
+                cout<<"2 - FACULTAD DE CIENCIAS MEDICAS \n";
+                gotoxy(100,8);
+                cout<<"3 - FACULTAD DE MARKETING, DISENO Y CIENCIAS DE LA COMUNICACION \n";
+                gotoxy(100,9);
+                cout<<"4 - FACULTAD DE CIENCIAS ADMINISTRATIVAS Y ECONOMICAS \n";
+                gotoxy(100,10);
+                cout<<"5 - FACULTAD DE INGENIERIA Y ARQUITECTURA \n";   
+                gotoxy(100,11);
+                cout<<"6 - FACULTAD DE CIENCIAS JURIDICAS, HUMANIDADES Y RELACIONES INTERNACIONALES \n";
+
+                gotoxy(55, 7);
                 scanf("%d", &facultySelector);
 
                 switch (facultySelector) {
@@ -788,9 +803,58 @@ void start(){
                 break;
                 }
                 
+                gotoxy(100, 5);
+                cout << "\033[K"; //Secuencias de escape ANSI - Permite borrar el menu entero de los filtros que se muestra a la derecha
+                gotoxy(100, 6);
+                cout << "\033[K"; //Secuencias de escape ANSI - Permite borrar el menu entero de los filtros que se muestra a la derecha
+                gotoxy(100, 7);
+                cout << "\033[K"; //Secuencias de escape ANSI - Permite borrar el menu entero de los filtros que se muestra a la derecha
+                gotoxy(100, 8);
+                cout << "\033[K"; //Secuencias de escape ANSI - Permite borrar el menu entero de los filtros que se muestra a la derecha
+                gotoxy(100, 9);
+                cout << "\033[K"; //Secuencias de escape ANSI - Permite borrar el menu entero de los filtros que se muestra a la derecha
+                gotoxy(100, 10);
+                cout << "\033[K"; //Secuencias de escape ANSI - Permite borrar el menu entero de los filtros que se muestra a la derecha
+                gotoxy(100, 11);
+                cout << "\033[K"; //Secuencias de escape ANSI - Permite borrar el menu entero de los filtros que se muestra a la derecha
 
-                gotoxy(19, 8);
                 int majorSelector;
+                gotoxy(100,5);
+                cout<<"MENU DE FILTROS - CARRERAS \n";
+                gotoxy(100,6);
+                cout<<"1 - DERECHO \n";
+                gotoxy(100,7);
+                cout<<"2 - DIPLOMACIA Y RELACIONES INTERNACIONALES \n";
+                gotoxy(100,8);
+                cout<<"3 - MEDICINA \n";
+                gotoxy(100,9);
+                cout<<"4 - PSICOLOGIA \n";
+                gotoxy(100,10);
+                cout<<"5 - ODONTOLOGIA \n";   
+                gotoxy(100,11);
+                cout<<"6 - MARKETING Y PUBLICIDAD \n";
+                gotoxy(100,12);
+                cout<<"7 - DISENO Y COMUNICACION VISUAL \n";
+                gotoxy(100,13);
+                cout<<"8 - COMUNICACION Y RELACIONES PUBLICAS \n";
+                gotoxy(100,14);
+                cout<<"9 - ADMINISTRACION DE EMPRESAS \n";
+                gotoxy(100,15);
+                cout<<"10 - NEGOCIOS INTERNACIONALES \n";
+                gotoxy(100,16);
+                cout<<"11 - ECONOMIA EMPRESARIAL \n";   
+                gotoxy(100,17);
+                cout<<"12 - CONTABILIDAD Y FINANZAS \n";
+                gotoxy(100,18);
+                cout<<"13 - INGENIERIA INDUSTRIAL \n";
+                gotoxy(100,19);
+                cout<<"14 - INGENIERIA CIVIL \n";
+                gotoxy(100,20);
+                cout<<"15 - INGENIERIA EN SISTEMAS DE INFORMACION \n";
+                gotoxy(100,21);
+                cout<<"16 - ARQUITECTURA \n";
+
+                gotoxy(56, 8);
                 scanf("%d", &majorSelector);
 
                 switch (majorSelector) {
@@ -867,6 +931,41 @@ void start(){
                 break;
                 }
                 
+                gotoxy(100, 5);
+                cout << "\033[K"; //Secuencias de escape ANSI - Permite borrar el menu entero de los filtros que se muestra a la derecha
+                gotoxy(100, 6);
+                cout << "\033[K"; //Secuencias de escape ANSI - Permite borrar el menu entero de los filtros que se muestra a la derecha
+                gotoxy(100, 7);
+                cout << "\033[K"; //Secuencias de escape ANSI - Permite borrar el menu entero de los filtros que se muestra a la derecha
+                gotoxy(100, 8);
+                cout << "\033[K"; //Secuencias de escape ANSI - Permite borrar el menu entero de los filtros que se muestra a la derecha
+                gotoxy(100, 9);
+                cout << "\033[K"; //Secuencias de escape ANSI - Permite borrar el menu entero de los filtros que se muestra a la derecha
+                gotoxy(100, 10);
+                cout << "\033[K"; //Secuencias de escape ANSI - Permite borrar el menu entero de los filtros que se muestra a la derecha
+                gotoxy(100, 11);
+                cout << "\033[K"; //Secuencias de escape ANSI - Permite borrar el menu entero de los filtros que se muestra a la derecha
+                gotoxy(100, 12);
+                cout << "\033[K"; //Secuencias de escape ANSI - Permite borrar el menu entero de los filtros que se muestra a la derecha
+                gotoxy(100, 13);
+                cout << "\033[K"; //Secuencias de escape ANSI - Permite borrar el menu entero de los filtros que se muestra a la derecha
+                gotoxy(100, 14);
+                cout << "\033[K"; //Secuencias de escape ANSI - Permite borrar el menu entero de los filtros que se muestra a la derecha
+                gotoxy(100, 15);
+                cout << "\033[K"; //Secuencias de escape ANSI - Permite borrar el menu entero de los filtros que se muestra a la derecha
+                gotoxy(100, 16);
+                cout << "\033[K"; //Secuencias de escape ANSI - Permite borrar el menu entero de los filtros que se muestra a la derecha
+                gotoxy(100, 17);
+                cout << "\033[K"; //Secuencias de escape ANSI - Permite borrar el menu entero de los filtros que se muestra a la derecha
+                gotoxy(100, 18);
+                cout << "\033[K"; //Secuencias de escape ANSI - Permite borrar el menu entero de los filtros que se muestra a la derecha
+                gotoxy(100, 19);
+                cout << "\033[K"; //Secuencias de escape ANSI - Permite borrar el menu entero de los filtros que se muestra a la derecha
+                gotoxy(100, 20);
+                cout << "\033[K"; //Secuencias de escape ANSI - Permite borrar el menu entero de los filtros que se muestra a la derecha
+                gotoxy(100, 21);
+                cout << "\033[K"; //Secuencias de escape ANSI - Permite borrar el menu entero de los filtros que se muestra a la derecha
+
                 gotoxy(17, 9);
                 scanf(" %[^\n]", st.email);
                 
@@ -880,7 +979,7 @@ void start(){
                 else {
                 // Invalid delivery state
                 gotoxy(10,13);
-                cout << "Estado de entrega inválido. No se agregará al archivo." << endl;
+                cout << "Estado de entrega invalido. No se agregara al archivo." << endl;
                 system("pause || read -p 'Presiona Enter para continuar...' -n 1 -s");
                 break;}
                 
