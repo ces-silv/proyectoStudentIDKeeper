@@ -143,7 +143,7 @@ void facultySearcher(){
 
     case 3: // FACULTAD DE MARKETING, DISEÑO Y CIENCIAS DE LA COMUNICACION
         system("cls || clear");
-        strcpy(nameFaculty, "FACULTAD DE MARKETING, DISEÑO Y CIENCIAS DE LA COMUNICACION");
+        strcpy(nameFaculty, "FACULTAD DE MARKETING, DISENO Y CIENCIAS DE LA COMUNICACION");
         cout << "Informacion estudiantil" << endl;
         cout << endl;
         if (lastReg == 0)
@@ -358,7 +358,7 @@ void majorSearcher(){
  	
 	case 7: //DISEÑO Y COMUNICACION VISUAL
 	  system("cls || clear");
-        strcpy(nameMajor, "DISEÑO Y COMUNICACION VISUAL");
+        strcpy(nameMajor, "DISENO Y COMUNICACION VISUAL");
         cout << "Informacion estudiantil" << endl;
         cout << endl;
         if (lastReg == 0)
