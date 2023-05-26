@@ -310,7 +310,9 @@ void majorSearcher() {
     } 
     break;
 
-    case 6: // MARKETING Y PUBLICIDAD
+    case 6:
+    {
+     // MARKETING Y PUBLICIDAD
     system("cls || clear");
     cout << "Informacion estudiantil" << endl;
     cout << endl;
@@ -326,9 +328,13 @@ void majorSearcher() {
             cout << "Estado de Entrega: " << students[i].deliveredOrNot << endl;
             cout << "Fecha de entrega: " << students[i].dateOfDelivery.day << "/" << students[i].dateOfDelivery.month << "/" << students[i].dateOfDelivery.year << endl;
     } 
+    }
     break;
+    }
 
-    case 7: // DISENO Y COMUNICACION VISUAL
+    case 7:
+    {
+     // DISENO Y COMUNICACION VISUAL
     system("cls || clear");
     cout << "Informacion estudiantil" << endl;
     cout << endl;
@@ -346,6 +352,7 @@ void majorSearcher() {
         }
     } 
     break;
+    }
 
     case 8: // COMUNICACION Y RELACIONES PUBLICAS - FALTAN ESTUDIANTES
     system("cls || clear");
@@ -524,7 +531,6 @@ void majorSearcher() {
         majorSearcher();
         break;
     }
-}
 }
 
 void deliveredShow(){

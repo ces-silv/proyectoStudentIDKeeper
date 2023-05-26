@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <string.h>
 #include "gotoxy.h"
-#include "struct.h"
 #include "searcherFunctions.cpp"
 using namespace std;
 
@@ -184,36 +183,12 @@ void start(){
         break;
     
     case 3:
-        system("clear || cls");
-        cout << "Escribe la facultad del estudiante: " << endl;
-        scanf(" %[^\n]", st.faculty);
-        pos = isStudent(st.faculty);
-        if(pos == 0){
-            cout << "No se encontro el registro" << endl;
-            system("pause || read -p 'Presiona Enter para continuar...' -n 1 -s");
-            system("clear || cls");
-            start();
-
-        } else{
-            system("clear || cls ");
-            facultySearcher();}
+            facultySearcher();
             return;
         break;
     
     case 4:
-        system("clear || cls");
-        cout << "Escribe la carrera del estudiante: " << endl;
-        scanf(" %[^\n]", st.major);
-        pos = isStudent(st.major);
-        if(pos == 0){
-            cout << "No se encontro el registro" << endl;
-            system("pause || read -p 'Presiona Enter para continuar...' -n 1 -s");
-            system("clear || cls");
-            start();
-
-        } else{
-            system("clear || cls ");
-            majorSearcher();}
+            majorSearcher();
             return;
         break;
     
