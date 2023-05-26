@@ -59,7 +59,7 @@ studentsUAM getStudent(int pos){
 
 int isStudent(char CIF[])
 {
-    int position = 0;
+    int position = -1;
     for (int i = 0; i < lastReg; i++)
     {
         if (strcmp(CIF, students[i].cif) == 0)
@@ -645,7 +645,6 @@ int mainMenu(){
     return selectMenu;
 }
 
-
 void start(){
     int selectMenu, pos, resp;
     char cif[8];
@@ -674,40 +673,45 @@ void start(){
                 break;
             
             case 2:
-            system("cls||clear");
-            cout << "Escribe el ID a buscar: ";
-            scanf(" %[^\n]", cif);
-            pos = isStudent(cif);
-            showStudent(pos);
-            cout << "DATOS A EDITAR\n";
-            cout << "CIF:";
-            scanf(" %[^\n]", st.cif);
-            cout << "NOMBRE: ";
-            scanf(" %[^\n]", st.fullname);
-            cout << "FACULTAD: ";
-            scanf(" %[^\n]", st.faculty);
-            cout << "CARRERA: ";
-            scanf(" %[^\n]", st.major);
-            cout << "EMAIL: ";
-            scanf(" %[^\n]", st.email);
-            cout << "ESTADO DE ENTREGA ";
-            scanf(" %[^\n]", st.deliveredOrNot);
-            cout << "FECHA DE ENTREGA dd/mm/yyyy: ";
-            scanf("%d/%d/%d", &st.dateOfDelivery.day, &st.dateOfDelivery.month, &st.dateOfDelivery.year);
-            updateStudent(st, pos);
-            cout << "Registro actualizado...\n";
-            system("pause");
+                system("cls||clear");
+                cout << "Escribe el ID a buscar: ";
+                scanf(" %[^\n]", cif);
+                pos = isStudent(cif);
+                showStudent(pos);
+                cout << "DATOS A EDITAR\n";
+                cout << "CIF:";
+                scanf(" %[^\n]", st.cif);
+                cout << "NOMBRE: ";
+                scanf(" %[^\n]", st.fullname);
+                cout << "FACULTAD: ";
+                scanf(" %[^\n]", st.faculty);
+                cout << "CARRERA: ";
+                scanf(" %[^\n]", st.major);
+                cout << "EMAIL: ";
+                scanf(" %[^\n]", st.email);
+                cout << "ESTADO DE ENTREGA ";
+                scanf(" %[^\n]", st.deliveredOrNot);
+                cout << "FECHA DE ENTREGA dd/mm/yyyy: ";
+                scanf("%d/%d/%d", &st.dateOfDelivery.day, &st.dateOfDelivery.month, &st.dateOfDelivery.year);
+                updateStudent(st, pos);
+                cout << "Registro actualizado...\n";
+                system("pause || read -p 'Presiona Enter para continuar...' -n 1 -s");
+                    start();
                 break;
             
             case 3:
                     system("clear || cls");
                     facultySearcher();
+                    system("pause || read -p 'Presiona Enter para continuar...' -n 1 -s");
+                    start();
                     return;
                 break;
             
             case 4:
                     system("clear || cls");
                     majorSearcher();
+                    system("pause || read -p 'Presiona Enter para continuar...' -n 1 -s");
+                    start();
                     return;
                 break;
             
@@ -891,7 +895,7 @@ void start(){
                 cout << "Escribe el CIF a buscar: ";
                 scanf(" %[^\n]", cif);
                 pos = isStudent(cif);
-                if(pos == 0){
+                if(pos == -1){
                     cout << "No se encontro el registro" << endl;
                 } else{
                     system("clear || cls ");
