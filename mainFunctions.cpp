@@ -854,7 +854,7 @@ void start(){
                 gotoxy(100,21);
                 cout<<"16 - ARQUITECTURA \n";
 
-                gotoxy(56, 8);
+                gotoxy(54, 8);
                 scanf("%d", &majorSelector);
 
                 switch (majorSelector) {
