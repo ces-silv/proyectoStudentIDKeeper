@@ -21,6 +21,9 @@ void updateStudent(studentsUAM st, int pos);
 /*Delete*/
 void deleteStudent(int pos);
 
+void deliveredShow();
+void notDeliveredShow();
+
 /*Menu*/
 void start();
 int mainMenu();
@@ -81,6 +84,36 @@ void showStudents()
     }
     cout << endl;
     cout << "Ultimo registro...\n";
+}
+
+void deliveredShow(){
+    char status[10] = "Entregado";
+    if (lastReg == 0)
+    {
+        cout << "No hay registros" << endl;
+        return;
+    }
+    for (int i = 0; i < lastReg; i++){
+        if(strcmp(status, students[i].deliveredOrNot) == 0){
+            cout << "========================\n";
+            showStudent(i);
+        }
+    }
+}
+
+void notDeliveredShow(){
+    char status[15] = "No Entregado";
+    if (lastReg == 0)
+    {
+        cout << "No hay registros" << endl;
+        return;
+    }
+    for (int i = 0; i < lastReg; i++){
+        if(strcmp(status, students[i].deliveredOrNot) == 0){
+            cout << "========================\n";
+            showStudent(i);
+        }
+    }
 }
 
 void updateStudent(studentsUAM st, int pos){
@@ -213,12 +246,14 @@ void start(){
                 system("clear || cls");
                 cout << "Estudiantes con carnets ENTREGADOS: " << endl;
                 deliveredShow();
+                system("pause || read -p 'Presiona Enter para continuar...' -n 1 -s");
                 break;
             
             case 6:
                 system("clear || cls");
                 cout << "Estudiantes con carnets NO ENTREGADOS: " << endl;
                 notDeliveredShow();
+                system("pause || read -p 'Presiona Enter para continuar...' -n 1 -s");
                 break;
                 
             case 7: 

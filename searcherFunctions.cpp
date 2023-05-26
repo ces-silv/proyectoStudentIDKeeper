@@ -532,38 +532,3 @@ void majorSearcher() {
         break;
     }
 }
-
-void deliveredShow(){
-    cout << endl;
-    cout << "Informacion estudiantil" << endl;
-    cout << endl;
-    for(int i = 0; i < MAX; i++){
-        string deliveredSearcher = students[i].deliveredOrNot;
-        if(deliveredSearcher.compare("ENTREGADO") == 0){
-        cout << "CIF: " << students[i].cif << endl;
-        cout << "Nombre: " << students[i].fullname << endl;
-        cout << "Facultad: " << students[i].faculty << endl;
-        cout << "Carrera: " << students[i].major << endl;
-        cout << "email: " << students[i].email << endl;
-        cout << "Estado de Entrega: " << students[i].deliveredOrNot << endl;
-        cout << "Fecha de entrega: " << students[i].dateOfDelivery.day << "/" << students[i].dateOfDelivery.month << "/" << students[i].dateOfDelivery.year << endl;
-        }
-    }
-}
-
-void notDeliveredShow(){
-    cout << endl;
-    cout << "Informacion estudiantil" << endl;
-    cout << endl;
-    for(int i = 0; i < MAX; i++){
-        string deliveredSearcher = students[i].deliveredOrNot;
-        if(deliveredSearcher.compare("NO ENTREGADO") == 0){
-        cout << "CIF: " << students[i].cif << endl;
-        cout << "Nombre: " << students[i].fullname << endl;
-        cout << "Facultad: " << students[i].faculty << endl;
-        cout << "Carrera: " << students[i].major << endl;
-        cout << "email: " << students[i].email << endl;
-        cout << "Estado de Entrega: " << students[i].deliveredOrNot << endl;
-    }
-}
-}
