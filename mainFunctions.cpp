@@ -22,6 +22,7 @@ void updateStudent(studentsUAM st, int pos);
 void deleteStudent(int pos);
 
 void facultySearcher();
+void majorSearcher();
 void deliveredShow();
 void notDeliveredShow();
 
@@ -220,6 +221,329 @@ void facultySearcher(){
     }
 }
 
+void majorSearcher(){
+    int searchMajor;
+    char nameMajor[100];
+    cout << endl;
+    cout << "Seleccione la carrera a buscar:" << endl;
+    cout<< "1. Derecho" <<endl;
+    cout<< "2. Diplomacia y Relaciones Internacionales" <<endl;
+    cout<< "3. Medicina" <<endl;
+    cout<< "4. Psicologia" <<endl;
+    cout<< "5. Odontologia" <<endl;
+    cout<< "6. Marketing y Publicidad" <<endl;
+    cout<< "7. Diseno y Comunicacion Visual" <<endl;
+    cout<< "8. Comunicacion y Relaciones Publicas" <<endl;
+    cout<< "9. Administracion de Empresa" <<endl;
+    cout<< "10. Negocios Internacionales" <<endl;
+    cout<< "11. Economia Empresarial" <<endl;
+    cout<< "12. Contabilidad y Finanzas" <<endl;
+    cout<< "13. Ingenieria Industrial" <<endl;
+    cout<< "14. Ingenieria Civil" <<endl;
+    cout<< "15. Ingenieria en Sistemas de Informacion" <<endl;
+    cout<< "16. Arquitectura" <<endl;
+    cout << endl;
+    cout << "---> "; cin >> searchMajor;
+    cin.ignore();
+
+    switch (searchMajor)
+    {
+    case 1: // DERECHO
+        system("cls || clear");
+        strcpy(nameMajor, "DERECHO");
+        cout << "Informacion estudiantil" << endl;
+        cout << endl;
+        if (lastReg == 0)
+        {
+            cout << "No hay registros" << endl;
+            return;
+        }
+        for (int i = 0; i < lastReg; i++){
+            if(strcmp(nameMajor, students[i].major) == 0){
+                cout << "========================\n";
+                showStudent(i);
+            }
+        }
+        break;
+
+    case 2: // DIPLOMACIA Y RELACIONES INTERNACIONALES
+        system("cls || clear");
+        strcpy(nameMajor, "DIPLOMACIA Y RELACIONES INTERNACIONALES");
+        cout << "Informacion estudiantil" << endl;
+        cout << endl;
+        if (lastReg == 0)
+        {
+            cout << "No hay registros" << endl;
+            return;
+        }
+        for (int i = 0; i < lastReg; i++){
+            if(strcmp(nameMajor, students[i].major) == 0){
+                cout << "========================\n";
+                showStudent(i);
+            }
+        }
+    break; 
+
+    case 3: // MEDICINA
+        system("cls || clear");
+        strcpy(nameMajor, "MEDICINA");
+        cout << "Informacion estudiantil" << endl;
+        cout << endl;
+        if (lastReg == 0)
+        {
+            cout << "No hay registros" << endl;
+            return;
+        }
+        for (int i = 0; i < lastReg; i++){
+            if(strcmp(nameMajor, students[i].major) == 0){
+                cout << "========================\n";
+                showStudent(i);
+            }
+        }
+        break;
+
+    case 4: // PSICOLOGIA
+        system("cls || clear");
+        strcpy(nameMajor, "PSICOLOGIA");
+        cout << "Informacion estudiantil" << endl;
+        cout << endl;
+        if (lastReg == 0)
+        {
+            cout << "No hay registros" << endl;
+            return;
+        }
+        for (int i = 0; i < lastReg; i++){
+            if(strcmp(nameMajor, students[i].major) == 0){
+                cout << "========================\n";
+                showStudent(i);
+            }
+        }
+        break;
+
+    case 5: //ODONTOLOGIA
+        system("cls || clear");
+        strcpy(nameMajor, "ODONTOLOGIA");
+        cout << "Informacion estudiantil" << endl;
+        cout << endl;
+        if (lastReg == 0)
+        {
+            cout << "No hay registros" << endl;
+            return;
+        }
+        for (int i = 0; i < lastReg; i++){
+            if(strcmp(nameMajor, students[i].major) == 0){
+                cout << "========================\n";
+                showStudent(i);
+            }
+        }
+        break;
+
+    case 6: //MARKETING Y PUBLICIDAD
+        system("cls || clear");
+        strcpy(nameMajor, "MARKETING Y PUBLICIDAD");
+        cout << "Informacion estudiantil" << endl;
+        cout << endl;
+        if (lastReg == 0)
+        {
+            cout << "No hay registros" << endl;
+            return;
+        }
+        for (int i = 0; i < lastReg; i++){
+            if(strcmp(nameMajor, students[i].major) == 0){
+                cout << "========================\n";
+                showStudent(i);
+            }
+        }
+        break;
+ 	
+	case 7: //DISEÑO Y COMUNICACION VISUAL
+	  system("cls || clear");
+        strcpy(nameMajor, "DISEÑO Y COMUNICACION VISUAL");
+        cout << "Informacion estudiantil" << endl;
+        cout << endl;
+        if (lastReg == 0)
+        {
+            cout << "No hay registros" << endl;
+            return;
+        }
+        for (int i = 0; i < lastReg; i++){
+            if(strcmp(nameMajor, students[i].major) == 0){
+                cout << "========================\n";
+                showStudent(i);
+            }
+        }
+        break;
+
+	case 8: //COMUNICACION Y RELACIONES PUBLICAS
+	  system("cls || clear");
+        strcpy(nameMajor, "COMUNICACION Y RELACIONES PUBLICAS");
+        cout << "Informacion estudiantil" << endl;
+        cout << endl;
+        if (lastReg == 0)
+        {
+            cout << "No hay registros" << endl;
+            return;
+        }
+        for (int i = 0; i < lastReg; i++){
+            if(strcmp(nameMajor, students[i].major) == 0){
+                cout << "========================\n";
+                showStudent(i);
+            }
+        }
+        break;
+
+	case 9: //ADMINISTRACION DE EMPRESAS
+	  system("cls || clear");
+        strcpy(nameMajor, "ADMINISTRACION DE EMPRESAS");
+        cout << "Informacion estudiantil" << endl;
+        cout << endl;
+        if (lastReg == 0)
+        {
+            cout << "No hay registros" << endl;
+            return;
+        }
+        for (int i = 0; i < lastReg; i++){
+            if(strcmp(nameMajor, students[i].major) == 0){
+                cout << "========================\n";
+                showStudent(i);
+            }
+        }
+        break;
+
+	case 10: //NEGOCIOS INTERNACIONALES
+	  system("cls || clear");
+        strcpy(nameMajor, "NEGOCIOS INTERNACIONALES");
+        cout << "Informacion estudiantil" << endl;
+        cout << endl;
+        if (lastReg == 0)
+        {
+            cout << "No hay registros" << endl;
+            return;
+        }
+        for (int i = 0; i < lastReg; i++){
+            if(strcmp(nameMajor, students[i].major) == 0){
+                cout << "========================\n";
+                showStudent(i);
+            }
+        }
+        break;
+
+	case 11: //ECONOMIA EMPRESARIAL
+	  system("cls || clear");
+        strcpy(nameMajor, "ECONOMIA EMPRESARIAL");
+        cout << "Informacion estudiantil" << endl;
+        cout << endl;
+        if (lastReg == 0)
+        {
+            cout << "No hay registros" << endl;
+            return;
+        }
+        for (int i = 0; i < lastReg; i++){
+            if(strcmp(nameMajor, students[i].major) == 0){
+                cout << "========================\n";
+                showStudent(i);
+            }
+        }
+        break;
+
+	case 12: //CONTABILIDAD Y FINANZAS
+	  system("cls || clear");
+        strcpy(nameMajor, "CONTABILIDAD Y FINANZAS");
+        cout << "Informacion estudiantil" << endl;
+        cout << endl;
+        if (lastReg == 0)
+        {
+            cout << "No hay registros" << endl;
+            return;
+        }
+        for (int i = 0; i < lastReg; i++){
+            if(strcmp(nameMajor, students[i].major) == 0){
+                cout << "========================\n";
+                showStudent(i);
+            }
+        }
+        break;
+
+	case 13: //INGENIERIA INDUSTRIAL
+	  system("cls || clear");
+        strcpy(nameMajor, "INGENIERIA INDUSTRIAL");
+        cout << "Informacion estudiantil" << endl;
+        cout << endl;
+        if (lastReg == 0)
+        {
+            cout << "No hay registros" << endl;
+            return;
+        }
+        for (int i = 0; i < lastReg; i++){
+            if(strcmp(nameMajor, students[i].major) == 0){
+                cout << "========================\n";
+                showStudent(i);
+            }
+        }
+        break;
+
+	case 14: //INGENIERIA CIVIL
+	  system("cls || clear");
+        strcpy(nameMajor, "INGENIERIA CIVIL");
+        cout << "Informacion estudiantil" << endl;
+        cout << endl;
+        if (lastReg == 0)
+        {
+            cout << "No hay registros" << endl;
+            return;
+        }
+        for (int i = 0; i < lastReg; i++){
+            if(strcmp(nameMajor, students[i].major) == 0){
+                cout << "========================\n";
+                showStudent(i);
+            }
+        }
+        break;
+
+	case 15: //INGENIERIA EN SISTEMAS DE INFORMACION
+	  system("cls || clear");
+        strcpy(nameMajor, "INGENIERIA EN SISTEMAS DE INFORMACION");
+        cout << "Informacion estudiantil" << endl;
+        cout << endl;
+        if (lastReg == 0)
+        {
+            cout << "No hay registros" << endl;
+            return;
+        }
+        for (int i = 0; i < lastReg; i++){
+            if(strcmp(nameMajor, students[i].major) == 0){
+                cout << "========================\n";
+                showStudent(i);
+            }
+        }
+        break;
+
+	case 16: //ARQUITECTURA
+	  system("cls || clear");
+        strcpy(nameMajor, "ARQUITECTURA");
+        cout << "Informacion estudiantil" << endl;
+        cout << endl;
+        if (lastReg == 0)
+        {
+            cout << "No hay registros" << endl;
+            return;
+        }
+        for (int i = 0; i < lastReg; i++){
+            if(strcmp(nameMajor, students[i].major) == 0){
+                cout << "========================\n";
+                showStudent(i);
+            }
+        }
+        break;
+
+    default:
+        system("cls || clear");
+        cout << "OPCION NO PERMITIDA - VOLVIENDO AL MENU DE SELECION" << endl;
+        majorSearcher();
+        break;
+    }
+}
+
 void deliveredShow(){
     char status[10] = "ENTREGADO";
     if (lastReg == 0)
@@ -376,11 +700,13 @@ void start(){
                 break;
             
             case 3:
+                    system("clear || cls");
                     facultySearcher();
                     return;
                 break;
             
             case 4:
+                    system("clear || cls");
                     majorSearcher();
                     return;
                 break;
