@@ -745,10 +745,124 @@ void start(){
                 scanf(" %[^\n]", st.cif);
                 gotoxy(27, 6);
                 scanf(" %[^\n]", st.fullname);
+                
                 gotoxy(20, 7);
-                scanf(" %[^\n]", st.faculty);
+                int facultySelector;
+                scanf("%d", &facultySelector);
+
+                switch (facultySelector) {
+                case 1:
+                    strcpy(st.faculty, "FACULTAD DE ODONTOLOGIA");
+                break;
+                
+                case 2:
+                    strcpy(st.faculty, "FACULTAD DE CIENCIAS MEDICAS");
+                break;
+                
+                case 3:
+                    strcpy(st.faculty, "FACULTAD DE MARKETING, DISENO Y CIENCIAS DE LA COMUNICACION");
+                break;
+    
+                case 4:
+                    strcpy(st.faculty, "FACULTAD DE CIENCIAS ADMINISTRATIVAS Y ECONOMICAS");
+                break;
+    
+                case 5:
+                    strcpy(st.faculty, "FACULTAD DE INGENIERIA Y ARQUITECTURA");
+                break;
+                
+                case 6:
+                    strcpy(st.faculty, "FACULTAD DE CIENCIAS JURIDICAS, HUMANIDADES Y RELACIONES INTERNACIONALES");
+                break;
+                
+                default:
+                    gotoxy(10, 13);
+                    cout << "Facultad seleccionada invalida. No se agregara al archivo." << endl;
+                    system("pause || read -p 'Presiona Enter para continuar...' -n 1 -s");
+                    system("clear || cls");
+                    start();
+                break;
+                }
+                
+
                 gotoxy(19, 8);
-                scanf(" %[^\n]", st.major);
+                int majorSelector;
+                scanf("%d", &majorSelector);
+
+                switch (majorSelector) {
+                case 1:
+                    strcpy(st.major, "DERECHO");
+                break;
+                
+                case 2:
+                    strcpy(st.major, "DIPLOMACIA Y RELACIONES INTERNACIONALES");
+                break;
+    
+                case 3:
+                    strcpy(st.major, "MEDICINA");
+                break;
+    
+                case 4:
+                    strcpy(st.major, "PSICOLOGIA");
+                break;
+    
+                case 5:
+                    strcpy(st.major, "ODONTOLOGIA");
+                break;
+    
+                case 6:
+                    strcpy(st.major, "MARKETING Y PUBLICIDAD");
+                break;
+    
+                case 7:
+                    strcpy(st.major, "DISENO Y COMUNICACION VISUAL");
+                break;
+    
+                case 8:
+                    strcpy(st.major, "COMUNICACION Y RELACIONES PUBLICAS");
+                break;
+    
+                case 9:
+                strcpy(st.major, "ADMINISTRACION DE EMPRESAS");
+                break;
+    
+                case 10:
+                    strcpy(st.major, "NEGOCIOS INTERNACIONALES");
+                break;
+    
+                case 11:
+                    strcpy(st.major, "ECONOMIA EMPRESARIAL");
+                break;
+    
+                case 12:
+                    strcpy(st.major, "CONTABILIDAD Y FINANZAS");
+                break;
+    
+                case 13:
+                    strcpy(st.major, "INGENIERIA INDUSTRIAL");
+                break;
+                
+                case 14:
+                    strcpy(st.major, "INGENIERIA CIVIL");
+                break;
+    
+                case 15:
+                    strcpy(st.major, "INGENIERIA EN SISTEMAS DE INFORMACION");
+                break;
+                
+                case 16:
+                    strcpy(st.major, "ARQUITECTURA");
+                break;
+                
+                default:
+                    gotoxy(10, 13);
+                    cout << "Carrera seleccionada invalida. No se agregara al archivo." << endl;
+                    system("pause || read -p 'Presiona Enter para continuar...' -n 1 -s");
+                    system("clear || cls");
+                    start();
+                break;
+                }
+                
                 gotoxy(17, 9);
                 scanf(" %[^\n]", st.email);
                 
