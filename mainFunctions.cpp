@@ -560,7 +560,7 @@ void deliveredShow(){
 }
 
 void notDeliveredShow(){
-    char status[15] = "No Entregado";
+    char status[15] = "NO ENTREGADO";
     if (lastReg == 0)
     {
         cout << "No hay registros" << endl;
