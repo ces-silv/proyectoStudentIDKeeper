@@ -216,20 +216,29 @@ void start(){
                 break;
             
             case 2:
-                system("clear || cls");
-                cout << "Escribe el nombre del estudiante: " << endl;
-                scanf(" %[^\n]", st.fullname);
-                pos = isStudent(st.fullname);
-                if(pos == 0){
-                    cout << "No se encontro el registro" << endl;
-                    system("pause || read -p 'Presiona Enter para continuar...' -n 1 -s");
-                    system("clear || cls");
-                    start();
-
-                } else{
-                    system("clear || cls ");
-                    nameSearcher();}
-                    return;
+            system("cls||clear");
+            cout << "Escribe el ID a buscar: ";
+            scanf(" %[^\n]", cif);
+            pos = isStudent(cif);
+            showStudent(pos);
+            cout << "DATOS A EDITAR\n";
+            cout << "CIF:";
+            scanf(" %[^\n]", st.cif);
+            cout << "NOMBRE: ";
+            scanf(" %[^\n]", st.fullname);
+            cout << "FACULTAD: ";
+            scanf(" %[^\n]", st.faculty);
+            cout << "CARRERA: ";
+            scanf(" %[^\n]", st.major);
+            cout << "EMAIL: ";
+            scanf(" %[^\n]", st.email);
+            cout << "ESTADO DE ENTREGA ";
+            scanf(" %[^\n]", st.deliveredOrNot);
+            cout << "FECHA DE ENTREGA dd/mm/yyyy: ";
+            scanf("%d/%d/%d", &st.dateOfDelivery.day, &st.dateOfDelivery.month, &st.dateOfDelivery.year);
+            updateStudent(st, pos);
+            cout << "Registro actualizado...\n";
+            system("pause");
                 break;
             
             case 3:
