@@ -87,7 +87,7 @@ void showStudents()
 }
 
 void deliveredShow(){
-    char status[10] = "Entregado";
+    char status[10] = "ENTREGADO";
     if (lastReg == 0)
     {
         cout << "No hay registros" << endl;
@@ -256,7 +256,7 @@ void start(){
                 system("pause || read -p 'Presiona Enter para continuar...' -n 1 -s");
                 break;
                 
-            case 7: 
+            case 7:
                 system("clear||cls");
                 gotoxy(10, 5);
                 cout << "CIF:";
@@ -269,8 +269,8 @@ void start(){
                 gotoxy(10, 9);
                 cout << "Email: ";
                 gotoxy(10, 10);
-                cout << "Estado de entrega: ";
-                gotoxy(10,11);
+                cout << "Estado de entrega (INGRESAR 1 PARA ENTREGADO Y 2 PARA NO ENTREGADO): ";
+                gotoxy(10, 11);
                 cout << "Fecha de entrega dd/mm/yyyy: ";
                 gotoxy(15, 5);
                 scanf(" %[^\n]", st.cif);
@@ -282,13 +282,26 @@ void start(){
                 scanf(" %[^\n]", st.major);
                 gotoxy(17, 9);
                 scanf(" %[^\n]", st.email);
-                gotoxy(29, 10);
-                scanf(" %[^\n]", st.deliveredOrNot);
-                gotoxy(39,11);
+                
+                gotoxy(79, 10);
+                int deliveryState;
+                scanf("%d", &deliveryState);
+                if (deliveryState == 1) {
+                strcpy(st.deliveredOrNot, "ENTREGADO");} 
+                else if (deliveryState == 2) {
+                strcpy(st.deliveredOrNot, "NO ENTREGADO");} 
+                else {
+                // Invalid delivery state
+                gotoxy(10,13);
+                cout << "Estado de entrega inválido. No se agregará al archivo." << endl;
+                system("pause || read -p 'Presiona Enter para continuar...' -n 1 -s");
+                break;}
+                
+                gotoxy(39, 11);
                 scanf("%d/%d/%d", &st.dateOfDelivery.day, &st.dateOfDelivery.month, &st.dateOfDelivery.year);
                 addStudent(st);
                 system("pause || read -p 'Presiona Enter para continuar...' -n 1 -s");
-            break;
+                break;
             
             case 8: 
                 system("clear || cls");
