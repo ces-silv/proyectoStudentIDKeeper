@@ -1,4 +1,4 @@
-# AutoDoc
+# StudentIDKeeper
 This was a First Year College Project. 
 
 When we were on our first semester we noticed a problem, yearly the college give us an Student ID, but there wasn't a good process to see if they actually have your ID (the whole procces was on paper).
